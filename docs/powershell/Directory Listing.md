@@ -1,9 +1,7 @@
 ---
 layout: default
 title: Directory listing
-nav_order: 3
-has_children: true
-permalink: /docs/Powershell/Directory listing
+parent: Powershell
 ---
 
 # Directory listing
@@ -26,7 +24,7 @@ Using the .net IO.Directory.EnumerateFiles(). Returns a list of String Paths.
 ```
 
 ## Enumerating files using Get-ChildItem in to a list
-Using the built in Powershell command Get-ChildItem, and then adding to a list. Essentually the same as just Get-ChildItem. Written to be effort compatable with the IO.Directory EnumerateFiles in to a list.
+Using the built in Powershell command Get-ChildItem, and then adding to a list. Essentially the same as just Get-ChildItem. Written to be effort compatible with the IO.Directory EnumerateFiles in to a list.
 ```powershell
 $alist = [System.Collections.Arraylist]::New()
 $blist = [System.Collections.Arraylist]::New()
@@ -51,18 +49,18 @@ $blist = [System.Collections.Arraylist]::New()
 ## Results
 Results for 10000 files
 ```
-Eneration Get-ChildItem 00:00:00.4965621 count 10000
-Enumerate IO.Directory 00:00:00.0848703 count 10000
-Enumerate Get-ChildItem add to list 00:00:00.5317326 count 10000
-Enumerate IO.Directory with getitem 00:00:02.2512939 count 10000
+Enumerate Get-ChildItem             00:00:00.4965621
+Enumerate IO.Directory              00:00:00.0848703
+Enumerate Get-ChildItem add to list 00:00:00.5317326
+Enumerate IO.Directory with getitem 00:00:02.2512939
 ```
 
 Results for 125000 files
 ```
-Eneration Get-ChildItem 00:00:07.3086162 count 125000
-Enumerate via IO.Directory 00:00:01.3865644 count 125000
-Enumerate Get-ChildItem add to list 00:00:06.8382729 count 125000
-Enumeratevia IO.Directory with getitem 00:00:35.4594388 count 125000
+Enumerate Get-ChildItem             00:00:07.3086162
+Enumerate IO.Directory              00:00:01.3865644
+Enumerate Get-ChildItem add to list 00:00:06.8382729
+Enumerate IO.Directory with getitem 00:00:35.4594388
 ```
 
 IO.Directory is faster than Get-ChildItem.
