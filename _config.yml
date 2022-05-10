@@ -27,6 +27,8 @@ url: "https://ostat.github.io/" # the base hostname & protocol for your site, e.
 #twitter_username: 
 github_username:  ostat
 
+color_scheme: dark
+
 # Build settings
 #theme: minima
 #theme: "just-the-docs"
