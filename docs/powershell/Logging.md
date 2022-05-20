@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Powershell Logging
-parent: Powershell
+parent: PowerShell
 ---
 
 # Directory listing

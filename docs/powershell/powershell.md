@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Powershell
+title: PowerShell
 nav_order: 3
 has_children: true
 permalink: /docs/powershell

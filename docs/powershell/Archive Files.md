@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Archive files
-parent: Powershell
+parent: PowerShell
 ---
 
 # Archive files

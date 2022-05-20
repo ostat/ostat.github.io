@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Directory listing
-parent: Powershell
+parent: PowerShell
 ---
 
 # Directory listing

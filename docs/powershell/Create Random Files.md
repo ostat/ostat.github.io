@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Create Random Files
-parent: Powershell
+parent: PowerShell
 ---
 
 # Create Random Files.md
