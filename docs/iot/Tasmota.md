@@ -59,20 +59,20 @@ ON button1#state=3 DO power0 0 ENDON
 On long press, if any relays is on turn all off, if all are off turn all on.
 Solution uses a variable to record if anything is on.
 ```
-    ON System#Boot DO var1 0 ENDON
-    ON power1#state=1 DO Add1 1 ENDON
-    ON power2#state=1 DO Add1 1 ENDON
-    ON power3#state=1 DO Add1 1 ENDON
-    ON power4#state=1 DO Add1 1 ENDON
-    ON power1#state=0 DO Sub1 1 ENDON
-    ON power2#state=0 DO Sub1 1 ENDON
-    ON power3#state=0 DO Sub1 1 ENDON
-    ON power4#state=0 DO Sub1 1 ENDON
-    ON Var1#State>4 DO Var1 4 ENDON
-    ON Var1#State<0 DO Var1 0 ENDON
-    ON Var1#State>0 DO Var2 0 ENDON
-    ON Var1#State==0 DO Var2 1 ENDON
-    ON button1#state=3 DO power0 %var2% ENDON
+ON System#Boot DO var1 0 ENDON
+ON power1#state=1 DO Add1 1 ENDON
+ON power2#state=1 DO Add1 1 ENDON
+ON power3#state=1 DO Add1 1 ENDON
+ON power4#state=1 DO Add1 1 ENDON
+ON power1#state=0 DO Sub1 1 ENDON
+ON power2#state=0 DO Sub1 1 ENDON
+ON power3#state=0 DO Sub1 1 ENDON
+ON power4#state=0 DO Sub1 1 ENDON
+ON Var1#State>4 DO Var1 4 ENDON
+ON Var1#State<0 DO Var1 0 ENDON
+ON Var1#State>0 DO Var2 0 ENDON
+ON Var1#State==0 DO Var2 1 ENDON
+ON button1#state=3 DO power0 %var2% ENDON
 ```
 
 [Tasmota Rules](ttps://tasmota.github.io/docs/Rules/)
