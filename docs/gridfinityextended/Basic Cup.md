@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Gridfinity Basic Cup
-parent: gridfinityextended
+parent: Gridfinity Extended
 ---
 
 # Navigation Structure

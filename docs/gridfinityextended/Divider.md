@@ -1,6 +1,6 @@
 ---
 layout: default
 title: Divider
-parent: gridfinityextended
+parent: Gridfinity Extended
 ---
 

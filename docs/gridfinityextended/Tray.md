@@ -1,6 +1,6 @@
 ---
 layout: default
 title: Tray
-parent: gridfinityextended
+parent: Gridfinity Extended
 ---
 
