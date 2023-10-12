@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Gridfinity Extended
-nav_order: 2
+nav_order: 1
 has_children: true
-permalink: /docs/gridfinityextended
+permalink: /docs/openscad/gridfinity-extended
 ---
 
 # Gridfinity Extended
@@ -11,8 +11,12 @@ permalink: /docs/gridfinityextended
 Gridfinity Extended is an OpenSCAD library originally based on Jamies library https://github.com/vector76/gridfinity_openscad.
 Built on this library are added base features and a customisable extended feature set.
 
+# Repo
+
+GitHub repo [ostat/gridfinity_openscad](https://github.com/ostat/gridfinity_openscad)
+
 # Added features included
-  - Base feature
+  - Base features
     - Corner magnets
     - Flat base
     - Customisable Finger slide
