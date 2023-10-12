@@ -8,8 +8,10 @@ permalink: /docs/openscad/gridfinity-extended
 
 # Gridfinity Extended
 
-Gridfinity Extended is an OpenSCAD library originally based on Jamies library https://github.com/vector76/gridfinity_openscad.
+Gridfinity Extended is an OpenSCAD library originally based on Jamies library https://github.com/vector76/gridfinity_openscad
 Built on this library are added base features and a customisable extended feature set.
+
+Details of the [Gridfinity specifications](https://gridfinity.xyz/specification/) can be found on the official site https://gridfinity.xyz/.
 
 # Repo
 
