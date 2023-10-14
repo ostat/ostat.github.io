@@ -14,9 +14,6 @@ Features:
  - Ability to force max brightness using mains switch
 
 ```mermaid
----
-title: Process Flow
----
 stateDiagram-v2
     ForceMax: Set Light Max Brightness
     state if_failedbootstate <<choice>>
@@ -29,7 +26,6 @@ stateDiagram-v2
     WaitNtp: Wait for NTP
     TimeBasedBrightness: Set brightness based on time
     BootBrightness: Set Dim brightness
-
 
     [*] --> PowerOn
     PowerOn --> LoadPereviousFailedBoot
@@ -50,15 +46,14 @@ stateDiagram-v2
 
 ```
 ---
-
 # Firmware
-https://github.com/openshwprojects/OpenBK7231T_App
+Firmware project site [https://github.com/openshwprojects/OpenBK7231T_App](https://github.com/openshwprojects/OpenBK7231T_App)
 
-
+list of commands supported by OpenBK7231T_App [https://github.com/openshwprojects/OpenBK7231T_App/blob/main/docs/commands-extended.md](https://github.com/openshwprojects/OpenBK7231T_App/blob/main/docs/commands-extended.md)
+---
 # Script
 To be save in the `OpenBK7231T` autoexec.
-
-```
+``` bash
 startDriver ntp
 ntp_timeZoneOfs 10:00
 

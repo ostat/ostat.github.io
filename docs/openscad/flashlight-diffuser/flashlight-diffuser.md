@@ -3,21 +3,24 @@ layout: default
 title: Flashlight Diffuser
 nav_order: 1
 has_children: true
+parent: OpenSCAD Projects
 permalink: /docs/flashlight-diffuser
 ---
 
 # Flashlight
 Setting | Description
 -|-
-`Measurement` | <br><ul><li>`inner`, Inner Diffuser - Fit over Flashlight.</li><li>`outer`, Outer Diffuser - Fit into Flashlight</li></ul>
+`Measurement` | `inner`: Inner Diffuser - Fit over Flashlight.<br>`outer`: Outer Diffuser - Fit into Flashlight
 `TorchDiameterTop` | Diameter flashlight at the top
 `TorchDiameterLower` | Diameter flashlight at the base of the overlap (mm), `default is TorchDiameterTop``
 `TorchOverlap` | Section of diffuser that fits on the torch (mm)
 
 # Diffuser
+<img src="../../../assets/openscad/flashlight-diffuser/diffuser-style.gif" alt="openscad Subdivisions" width="300"/><BR>
+
 Setting | Description
 -|-
-`DiffuserStyle` | "ShortRound"; <br><ul><li>`ShortRound`, Short Rounded.</li><li>`ShortFlat`, Short Flat</li><li>`WandShortRound`, Wand Short Rounded</li><li>`WandShortFlat`, Wand Short Flat</li><li>`WandLongRound`, Wand Long Rounded/li><li>`WandLongFlat`, Wand Long Flat</li><li>`Globe`, Light globe Shaped</li><li>`GlobeFlat`,  Flat Light globe Shaped</li><li>`WandThinRound`, Thin Rounded Wand</li><li>`WandThinFlat`,  Thin Flat Wand</li><li>`custom`, Custom settings</li><li>`TestFit`, Minimal print for fit test</li></ul>
+`DiffuserStyle` | `ShortRound`: Short Rounded<br>`ShortFlat`: Short Flat<br>`WandShortRound`: Wand Short Rounded<br>`WandShortFlat`: Wand Short Flat<br>`WandLongRound`: Wand Long Rounded<br>`WandLongFlat`: Wand Long Flat<br>`Globe`: Light globe Shaped<br>`GlobeFlat`: Flat Light globe Shaped<br>`WandThinRound`: Thin Rounded Wand<br>`WandThinFlat`:  Thin Flat Wand<br>`custom`: Custom settings<br>`TestFit`: Minimal print for fit test
 `WallThickness` | Thickness of the funnel walls
 
 # Custom Diffuser
