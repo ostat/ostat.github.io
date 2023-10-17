@@ -26,10 +26,10 @@ Setting | Description
 `depth` | Y dimension in grid units (multiples of 42mm)<br>options `[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]`
 `height` | Height in Gridfinity height units (7mm) of the bin. Does not include the base height.
 `filled_in` | Fill in solid block (overrides all following options). Useful for generating a block to be later modified in OpenSCAD or exported and modified in another tool.<br>`default = false`
-`label` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity-label.gif" alt="openscad label" width="150"/><br>Include overhang for labeling. <br>`default=disabled`<br>Options<br><div class="code-example" markdown="1"><ul><li>`disabled`, no label</li><li>`left`, Left aligned</li><li>`right`, Right aligned</li><li>`center`, Center aligned</li><li>`leftchamber`, One label per chamber, left aligned</li><li>`rightchamber`, One label per chamber, right aligned</li><li>`centerchamber`, One label per chamber, center aligned</li></ul></div>
+`label` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity-label.gif" alt="openscad label" width="150"/><br>Include overhang for labeling. <br>`default=disabled`<br>**Options**<br>`disabled`: no label<br>`left`: Left aligned<br>`right`: Right aligned<br>`center`: Center aligned<br>`leftchamber`: One label per chamber, left aligned<br>`rightchamber`: One label per chamber, right aligned<br>`centerchamber`: One label per chamber, center aligned<br>
 `label_width`| Width of the label in number of Gridfinity units (42mm), or zero means full width.
 `wall_thickness` | thickness of the bin walls, Zack's design is 0.95<br>`default = 0.95`
-`lip_style` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity-lipstyle.gif" alt="openscad label" width="150"/><br>Removes some or all of lip.<br>`default = "normal"`<br>Options<br><ul><li>`normal`, normal lip</li><li>`reduced`, smaller lip</li><li>`none`, no lip</li></ul>
+`lip_style` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity-lipstyle.gif" alt="openscad label" width="150"/><br>Removes some or all of lip.<br>`default = "normal"`<br>**Options**<br>`normal`: normal lip<br>`reduced`: smaller lip<br>`none`: no lip<br>
 
 ---
 # Subdivisions
@@ -108,7 +108,7 @@ Setting | Description
 `wallpattern_enabled` | Enables a grid pattern to be removed from the walls of the bin.<br>`default=false`
 `wallpattern_hexgrid` | Switches between a square and hex pattern<br>`default=true` which is hex.
 `wallpattern_walls` | Selects the walls to enable the wall pattern on. [front, back, left, right].<br>I.E. [1,0,0,0] front only, [1,1,1,1] all walls.
-`wallpattern_fill` | The pattern wont fill the space completely. These options allow for extending the patter to fill the space.<br><ul><li>`none`, no fill.</li><li>`space`, Increase Space between grid to fill</li><li>`crop`, Over fill and crop the the allowed space.</li></ul>
-`wallpattern_hole_sides` | Number of sides of the hole.<br>Options<br><ul><li>`4`, square</li><li>`6`, hexagon</li><li>`64`, circle</li></ul>
+`wallpattern_fill` | The pattern wont fill the space completely. These options allow for extending the patter to fill the space.<br>**Options**<br>`none`: no fill<br>`space`: Increase Space between grid to fill<br>`crop`: Over fill and crop the the allowed space
+`wallpattern_hole_sides` | Number of sides of the hole.<br>**Options**<br>`4`: square<br>`6`: hexagon<br>`64`: circle
 `wallpattern_hole_size` | Size of the hole
 `wallpattern_hole_spacing` | Spacing between pattern
