@@ -30,6 +30,23 @@ github_username:  ostat
 # Color scheme supports "light" (default) and "dark"
 color_scheme: light
 
+callouts_level: quiet # or loud
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+    
 # Build settings
 #theme: minima
 #theme: "just-the-docs"
