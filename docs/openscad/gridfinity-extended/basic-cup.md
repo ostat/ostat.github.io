@@ -18,6 +18,8 @@ nav_order: 2
 {:toc}
 </details>
 
+<img src="../../../assets/openscad/gridfinity-extended/basic-cup-demo.gif" alt="openscad label" width="300"/>
+
 # General Cup Settings
 
 Setting | Description

@@ -18,6 +18,8 @@ permalink: /docs/openscad/gridfinity-extended
 {:toc}
 </details>
 
+<img src="../../../assets/openscad/gridfinity-extended/basic-cup-demo.gif" alt="openscad label" width="300"/>
+
 ## Overview
 
 Gridfinity Extended is an OpenSCAD library originally based on Jamies library https://github.com/vector76/gridfinity_openscad
