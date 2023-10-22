@@ -32,12 +32,12 @@ GitHub repo [ostat/gridfinity_openscad](https://github.com/ostat/gridfinity_open
 
 ## Added features included
 Features added the the Base Gridfinity cups
-  - Corner magnets
+  - Corner only magnets
   - Flat base
   - Customisable Finger slide
-  - Patterned walls
-  - Wall cutout
-  - Round box
+  - [Patterned walls]({% link docs/openscad/gridfinity-extended/basic-cup.md %}#wall-pattern)
+  - [Wall cutout]({% link docs/openscad/gridfinity-extended/basic-cup.md %}#wall-cutout)
+  - [Round box]({% link docs/openscad/gridfinity-extended/basic-cup.md %}#tapered-corner)
 
 ## Extended features
 Extended features are features that build on the base bin but allow for unique options. These features also allow combining multiple extended features in to a single tray.
@@ -45,4 +45,4 @@ Extended features are features that build on the base bin but allow for unique o
 Options available
  - Item Holder    
  - Divider
- - Tray
+ - [Tray]({% link docs/openscad/gridfinity-extended/tray.md %})

@@ -32,7 +32,7 @@ Setting | Description
 `label_width`| Width of the label in number of Gridfinity units (42mm), or zero means full width.
 `wall_thickness` | thickness of the bin walls, Zack's design is 0.95<br>`default = 0.95`
 `lip_style` | <img src="../../../assets/openscad/gridfinity-extended/basic-cup-lipstyle.gif" alt="openscad label" width="150"/><br>Removes some or all of lip.<br>`default = "normal"`<br>**Options**<br>`normal`: normal lip<br>`reduced`: smaller lip<br>`none`: no lip<br>
-`position` | <img src="../../../assets/openscad/gridfinity-extended/basic-cup-position.gif">x and y position of the rendered bin. Useful of planing to further edit the bin with another script.<br>**options**<br>`default`: Centers x1 and y1<br>`center`: centers the whole bin<br>`zero`: Sets the lower left side of the bin on the zero mark
+`position` | <img src="../../../assets/openscad/gridfinity-extended/basic-cup-position.gif" width="150"><br>x and y position of the rendered bin. Useful of planing to further edit the bin with another script.<br>**options**<br>`default`: Centers x1 and y1<br>`center`: centers the whole bin<br>`zero`: Sets the lower left side of the bin on the zero mark
 
 ---
 # Subdivisions
