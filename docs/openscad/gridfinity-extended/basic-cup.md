@@ -35,6 +35,7 @@ Setting | Description
 `position` | <img src="../../../assets/openscad/gridfinity-extended/basic-cup-position.gif" width="150"><br>x and y position of the rendered bin. Useful of planing to further edit the bin with another script.<br>**options**<br>`default`: Centers x1 and y1<br>`center`: centers the whole bin<br>`zero`: Sets the lower left side of the bin on the zero mark
 
 ---
+
 # Subdivisions
 <img src="../../../assets/openscad/gridfinity-extended/basic-cup-chambers.gif" alt="openscad Subdivisions" width="300"/>
 
@@ -45,7 +46,9 @@ Setting | Description
 `separator_positions` | Separator positions are defined in terms of grid units from the left end. example `[0.25, 0.5, 1, 1.33, 1.66]`
 
 ---
+
 # Base
+
 Setting | Description
 -|-
 `magnet_diameter` | Zack's design uses magnet diameter of 6.5. 0 would disable the magnet hole.
@@ -64,7 +67,6 @@ Setting | Description
 
 {: .note }
 **Finger Slide** does not work with **Efficient Floor**.<BR>**Finger Slide** does not work with **Wall Pattern**.
-
 
 Setting | Description
 -|-
