@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Divider
+title: Extension Divider
 parent: Gridfinity Extended
 grand_parent: OpenSCAD Projects
 ---

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Item Holder
+title: Extension Item Holder
 parent: Gridfinity Extended
 grand_parent: OpenSCAD Projects
 ---
@@ -17,7 +17,7 @@ grand_parent: OpenSCAD Projects
 {:toc}
 </details>
 
-<img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-basicholder_text.gif" alt="" width="300"/>
+<img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-demo_text.gif" alt="" width="300"/>
 
 # Item Holder Settings
 
@@ -42,7 +42,7 @@ Setting | Description
 `itemholder_customcompartments` | TBA
 
 # know items
-Dimensions used for the **know items** dropdowns. Please verify the Dimensions before printing using something like the measurement tool in Prusa Slicer. I didn't measure all of these, they were sourced from various places online.
+Dimensions used for the **know items** dropdowns. Please verify the Dimensions before printing using something like the measurement tool in Prusa Slicer. I didn't measure most of these, measurements were sourced from various places online.
 
 ## tools
 

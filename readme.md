@@ -1,0 +1,1 @@
+to run locally open wsl and run `bundle exec jekyll serve`

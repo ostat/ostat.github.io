@@ -46,11 +46,14 @@ callouts:
   warning:
     title: Warning
     color: red
-    
+
 # Build settings
 #theme: minima
 #theme: "just-the-docs"
 remote_theme: just-the-docs/just-the-docs
+
+# Set a path/url to a favicon that will be displayed by the browser
+favicon_ico: "/assets/images/favicon.ico"
 
 plugins:
   - jekyll-feed
