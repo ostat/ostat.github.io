@@ -107,7 +107,7 @@ Setting | Description
 `wallpattern_enabled` | Enables a grid pattern to be removed from the walls of the bin.<br>`default=false`
 `wallpattern_hexgrid` | Switches between a square and hex pattern<br>`default=true` which is hex.
 `wallpattern_walls` | Selects the walls to enable the wall pattern on. [front, back, left, right].<br>I.E. [1,0,0,0] front only, [1,1,1,1] all walls.
-`wallpattern_fill` | The pattern wont fill the space completely. These options allow for extending the patter to fill the space.<br>**Options**<br>`none`: no fill<br>`space`: Increase Space between grid to fill<br>`crop`: Over fill and crop the the allowed space
+`wallpattern_fill` | The pattern wont fill the space completely. These options allow for extending the patter to fill the space.<br>**Options**<br>`none`: no fill<br>`space`: Increase Space between grid to fill<br>`crop`: Over fill and crop the the allowed space<br>`crophorizontal`:Crop horizontal only<br>`cropvertical`: Crop vertical only<br>`crophorizontal_spacevertical`: Crop horizontal space vertical<br>`cropvertical_spacehorizontal`: Crop vertical space horizontal<br>`spacevertical`:Space vertical<br>`spacehorizontal`:Space horizontal
 `wallpattern_hole_sides` | Number of sides of the hole.<br>**Options**<br>`4`: square<br>`6`: hexagon<br>`64`: circle
 `wallpattern_hole_size` | Size of the hole
 `wallpattern_hole_spacing` | Spacing between pattern

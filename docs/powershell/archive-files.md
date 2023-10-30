@@ -11,19 +11,18 @@ Archive a list of files using powershell. Main criteria is speed, intending to c
 Using PowerShell's builtin Compress-Archive using the pipe.
 ```powershell
 Get-ChildItem -Path $sourceFolder | Compress-Archive -DestinationPath $targetArchive
-}
 ```
 
 ## Archive files using Compress-Archive with a list of files
-Using PowerShell's builtin Compress-Archive to archive a list of files.
+Using PowerShell's builtin `Compress-Archive` to archive a list of files.
 ```powershell
 $compress = @{
-    LiteralPath= [IO.Directory]::EnumerateFiles($sourceFolder)
+    LiteralPath = [IO.Directory]::EnumerateFiles($sourceFolder)
     CompressionLevel = "Fastest"
     DestinationPath = $targetArchive
 }
+
 Compress-Archive @compress
-}
 ```
 
 ## Archive files using System.IO.Compression CreateFromDirectory
@@ -46,7 +45,6 @@ Using the .net System.IO.Compression.ZipFile.CreateFromDirectory(). Can only com
 ```powershell
 $CompressionLevel = [System.IO.Compression.CompressionLevel]::'Optimal'
 [System.IO.Compression.ZipFile]::CreateFromDirectory($sourceFolder, $targetArchive, $CompressionLevel, $false)
-}
 ```
 
 ## Archive files using 7Zip4Powershell
@@ -80,11 +78,10 @@ if(-not(get-module -name pscx -ea:silentlycontinue)){import-module pscx}
     {   
         Get-ChildItem $sourceFolder | Write-Zip -IncludeEmptyDirectories -Level 9 -OutputPath "$targetArchive" -EntryPathRoot $sourceFolder
     }
-}
 ```
 
 ## Results
-The tests were run using randomly generated files that each contained 100 random guids.
+The tests were run using randomly generated files that each contained 100 random GUIDs.
 
 Results for 1000 files
 ```
