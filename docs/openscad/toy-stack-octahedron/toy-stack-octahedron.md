@@ -21,7 +21,7 @@ The shapes are based around 25mm Octahedron. To help prevent the risk of choking
 
 ## Resources
 - Downloadable models on Printables
-  - https://www.printables.com/model/637326-stackable-octahedrons-building-blocks
+  - [https://www.printables.com/model/637326-stackable-octahedrons-building-blocks](https://www.printables.com/model/637326-stackable-octahedrons-building-blocks)
 - Repo
 
 ## Sample designs
