@@ -28,7 +28,7 @@ Built on this library are added base features and a customisable extended featur
 Details of the [Gridfinity specifications](https://gridfinity.xyz/specification/) can be found on the official site https://gridfinity.xyz/.
 
 ## Repo
-GitHub repo [ostat/gridfinity_openscad](https://github.com/ostat/gridfinity_openscad)
+GitHub repo [ostat/gridfinity_openscad](https://github.com/ostat/gridfinity_extended_openscad)
 
 ## Added features included
 Features added the the Base Gridfinity cups

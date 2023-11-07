@@ -7,7 +7,16 @@ parent: OpenSCAD Projects
 permalink: /docs/flashlight-diffuser
 ---
 
-# Flashlight
+OpenSCAD script to create diffusers for flash lights. This can turn a standard flashlight in to a lamp style light.
+
+# Resources
+- Downloadable models on Printables including some pre-rendered models and the OpenSCAD Script.
+  - https://www.printables.com/model/402801-flashlighttorch-diffusers
+
+# Settings
+OpenSCAD Customiser settings
+
+## Flashlight
 Setting | Description
 -|-
 `Measurement` | `inner`: Inner Diffuser - Fit over Flashlight.<br>`outer`: Outer Diffuser - Fit into Flashlight
@@ -15,7 +24,7 @@ Setting | Description
 `TorchDiameterLower` | Diameter flashlight at the base of the overlap (mm), `default is TorchDiameterTop``
 `TorchOverlap` | Section of diffuser that fits on the torch (mm)
 
-# Diffuser
+## Diffuser
 <img src="../../../assets/openscad/flashlight-diffuser/diffuser-style.gif" alt="openscad Subdivisions" width="300"/><BR>
 
 Setting | Description
@@ -23,7 +32,7 @@ Setting | Description
 `DiffuserStyle` | `ShortRound`: Short Rounded<br>`ShortFlat`: Short Flat<br>`WandShortRound`: Wand Short Rounded<br>`WandShortFlat`: Wand Short Flat<br>`WandLongRound`: Wand Long Rounded<br>`WandLongFlat`: Wand Long Flat<br>`Globe`: Light globe Shaped<br>`GlobeFlat`: Flat Light globe Shaped<br>`WandThinRound`: Thin Rounded Wand<br>`WandThinFlat`:  Thin Flat Wand<br>`custom`: Custom settings<br>`TestFit`: Minimal print for fit test
 `WallThickness` | Thickness of the funnel walls
 
-# Custom Diffuser
+## Custom Diffuser
 Setting | Description
 -|-
 `DiffuserLength` | Length of the diffuser, Default is the difference of opening and tip, to give 45deg walls.
@@ -31,6 +40,6 @@ Setting | Description
 `DiffuserEndThickness` | Thickness of diffuser end, Default is wall thickness.
 `DiffuserEndShape` | Thickness of diffuser end, Default is wall thickness. [flat: Flat, rounded: Rounded]
 
-# Internal stop
+## Internal stop
 `StopLength` | Length of internal stop, default is wall thickness
 `StopThickness` | Thickness of the stop, default is wall thickness
