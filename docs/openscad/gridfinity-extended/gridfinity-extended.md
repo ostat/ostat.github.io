@@ -18,7 +18,7 @@ permalink: /docs/openscad/gridfinity-extended
 {:toc}
 </details>
 
-<img src="../../../assets/openscad/gridfinity-extended/gridfinity_basic_cup-demos_text.gif" alt="openscad label" width="300"/>
+<img src="../../../assets/openscad/gridfinity-extended/gridfinity_basic_cup-multi_text.gif" alt="openscad label" width="300"/>
 
 ## Overview
 

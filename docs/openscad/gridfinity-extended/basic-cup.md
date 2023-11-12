@@ -18,7 +18,7 @@ nav_order: 2
 {:toc}
 </details>
 
-<img src="../../../assets/openscad/gridfinity-extended/gridfinity_basic_cup-demo_text" alt="openscad label" width="300"/>
+<img src="../../../assets/openscad/gridfinity-extended/gridfinity_basic_cup-multi_text.gif" alt="gridfinity extended" width="300"/>
 
 # General Cup Settings
 
@@ -26,7 +26,7 @@ Setting | Description
 -|-
 `width` | X dimension in grid units  (multiples of 42mm)<br>options `[ 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]`
 `depth` | Y dimension in grid units (multiples of 42mm)<br>options `[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]`
-`height` | Height in Gridfinity height units (7mm) of the bin. Does not include the base height.
+`height` | Height in Gridfinity height units (7mm) of the bin. Does not include the lip height which is about 4mm.
 `filled_in` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_basic_cup-filledin_text.gif" alt="openscad label" width="150"/><br>Fill in solid block (overrides all following options). Useful for generating a block to be later modified in OpenSCAD or exported and modified in another tool.<br>`default = "off"`<br>**Options**<bR>`off`: not filled in<br>`on`: filled in but still stackable<br>`notstackable`:filled in an not stackable<br>
 `label` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_basic_cup-label_text.gif" alt="openscad label" width="150"/><br>Include overhang for labeling. <br>`default=disabled`<br>**Options**<br>`disabled`: no label<br>`left`: Left aligned<br>`right`: Right aligned<br>`center`: Center aligned<br>`leftchamber`: One label per chamber, left aligned<br>`rightchamber`: One label per chamber, right aligned<br>`centerchamber`: One label per chamber, center aligned<br>
 `label_width`| Width of the label in number of Gridfinity units (42mm), or zero means full width.
@@ -55,7 +55,7 @@ Setting | Description
 `screw_depth` | Zack's design uses depth of 6. 0 would disable the screw hole.
 `center_magnet_diameter` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_basic_cup-center_magnet_text.gif" alt="OpenSCAD base flatbase" width="200"/><br>Magnet to be added to the center of a gridfinity cell. This is expected to be used to hold the items in the bin like screws in place.<br>Diameter of the center magnet.
 `center_magnet_thickness` | Thickness of the center magnet.
-`hole_overhang_remedy` | Sequential bridging for hanging hole. Only  active only when both screws and magnets are nonzero (and this option is selected).<br>ref :[buried-nuts-and-hanging-holes](https://hydraraptor.blogspot.com/2014/03/buried-nuts-and-hanging-holes.html)<br>ref: [How to 3D Print bores without supports (Fusion 360 Masterclass)](https://www.youtube.com/watch?v=KBuWcT8XkhA)
+`hole_overhang_remedy` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_basic_cup-sequentialbridging_text.gif" alt="OpenSCAD base flatbase" width="200"/><br>Sequential bridging for hanging hole. Only  active only when both screws and magnets are nonzero (and this option is selected).<br>ref :[buried-nuts-and-hanging-holes](https://hydraraptor.blogspot.com/2014/03/buried-nuts-and-hanging-holes.html)<br>ref: [How to 3D Print bores without supports (Fusion 360 Masterclass)](https://www.youtube.com/watch?v=KBuWcT8XkhA)
 `box_corner_attachments_only` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_basic_cup-box_corner_attachments_only_text.gif" alt="OpenSCAD base flatbase" width="200"/><br>Only add attachments (magnets and screw) to box corners (prints faster). <br>`default = false`
 `floor_thickness` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_basic_cup-floorthickness_text.gif" alt="OpenSCAD base flatbase" width="200"/><br>Minimum thickness above cutouts in base (Zack's design is effectively 1.2).<br>`default = 0.7`
 `cavity_floor_radius`| <img src="../../../assets/openscad/gridfinity-extended/gridfinity_basic_cup-basecorner_text.gif" alt="OpenSCAD base flatbase" width="200"/><br>The radius between the wall and the floor.<br>**Options**<br>`-1`: default, matches the wall radius,<br>`0`: no radius<br>`>0`: sets the to provided value
@@ -107,7 +107,19 @@ Setting | Description
 `wallpattern_enabled` | Enables a grid pattern to be removed from the walls of the bin.<br>`default=false`
 `wallpattern_hexgrid` | Switches between a square and hex pattern<br>`default=true` which is hex.
 `wallpattern_walls` | Selects the walls to enable the wall pattern on. [front, back, left, right].<br>I.E. [1,0,0,0] front only, [1,1,1,1] all walls.
-`wallpattern_fill` | The pattern wont fill the space completely. These options allow for extending the patter to fill the space.<br>**Options**<br>`none`: no fill<br>`space`: Increase Space between grid to fill<br>`crop`: Over fill and crop the the allowed space<br>`crophorizontal`:Crop horizontal only<br>`cropvertical`: Crop vertical only<br>`crophorizontal_spacevertical`: Crop horizontal space vertical<br>`cropvertical_spacehorizontal`: Crop vertical space horizontal<br>`spacevertical`:Space vertical<br>`spacehorizontal`:Space horizontal
+`wallpattern_fill` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_basic_cup-wallpatternfill_text.gif" alt="OpenSCAD base flatbase" width="200"/><BR>The pattern wont fill the space completely. These options allow for extending the patter to fill the space. Note, the pattern is rotated to make the hex shape easier to print. As such you need to swap vertical and horizontal.<br>**Options**<br>`none`: no fill<br>`space`: Increase Space between grid to fill<br>`crop`: Over fill and crop the the allowed space<br>`crophorizontal`:Crop horizontal only<br>`cropvertical`: Crop vertical only<br>`crophorizontal_spacevertical`: Crop horizontal space vertical<br>`cropvertical_spacehorizontal`: Crop vertical space horizontal<br>`spacevertical`:Space vertical<br>`spacehorizontal`:Space horizontal
 `wallpattern_hole_sides` | Number of sides of the hole.<br>**Options**<br>`4`: square<br>`6`: hexagon<br>`64`: circle
 `wallpattern_hole_size` | Size of the hole
 `wallpattern_hole_spacing` | Spacing between pattern
+
+
+---
+# Debug
+<img src="../../../assets/openscad/gridfinity-extended/gridfinity_basic_cup-debug_text.gif" width="300"/>
+
+Setting | Description
+-|-
+`cutx` | Slice along the x axis, only active during preview.
+`cuty` | Slice along the y axis, only active during preview.
+`help` | Enables logging of help messages during render, also enables caliper measurements if `cutx` or `cuty` are enabled.
+
