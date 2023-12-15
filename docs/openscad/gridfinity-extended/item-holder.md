@@ -17,7 +17,7 @@ grand_parent: OpenSCAD Projects
 {:toc}
 </details>
 
-<img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-demo_text.gif" alt="" width="300"/>
+![](/assets/openscad/gridfinity-extended/gridfinity_item_holder-demo_text.gif){:.wrap-lightbox width="300" }
 
 # Item Holder Settings
 
@@ -26,19 +26,19 @@ Setting | Description
 `itemholder_known_item` | List of items to select from, including hex bit shanks and batteries. See list bellow [know items](#know-items).
 `itemholder_known_cards` | List on Memory cards to select from. See list bellow [memory cards](#memory-cards).
 `itemholder_known_cartridges` | List on Game cartridges to select from. See list bellow [cartridges](#cartridges).
-`itemholder_hex_grid` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-grid_text.gif" alt="" width="200"/><br>Should the grid be square or hex. Hex grid works well for round and hex shaped items, not so well for rectangle things.
-`itemholder_hole_spacing` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-hole_spacing_text.gif" alt="" width="200"/><br>Spacing around the item holes.<br>`default = 2`
-`itemholder_hole_clearance` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-hole_clearance_text.gif" alt="" width="200"/><br>enlarges the holes by this amount for clearance. Know item lists have exact sizes, some clearance is needed.<br>`default = 0.65`
-`itemholder_hole_depth` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-hole_depth_text.gif" alt="" width="200"/><br>Depth of hole, Overrides the know item depth. Depth is limited by floor height.
-`itemholder_hole_sides` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-hole_sides_text.gif" alt="" width="200"/><br>The number of sides for the hole, when custom is selected. Passed as the FN to a circle.
-`itemholder_hole_size` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-hole_size_text.gif" alt="" width="200"/><br>The size the hole (diameter), when custom is selected.
-`itemholder_hole_gridx` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-hole_grid_text.gif" alt="" width="200"/><br>Number of items in the x axis. Override the dynamic calculated items, 0 = dynamic<br>`default = 0`
+`itemholder_hex_grid` | ![](/assets/openscad/gridfinity-extended/gridfinity_item_holder-grid_text.gif){:.wrap-lightbox width="200" }<br>Should the grid be square or hex. Hex grid works well for round and hex shaped items, not so well for rectangle things.
+`itemholder_hole_spacing` | ![](/assets/openscad/gridfinity-extended/gridfinity_item_holder-hole_spacing_text.gif){:.wrap-lightbox width="200" }<br>Spacing around the item holes.<br>`default = 2`
+`itemholder_hole_clearance` | ![](/assets/openscad/gridfinity-extended/gridfinity_item_holder-hole_clearance_text.gif){:.wrap-lightbox width="200" }<br>enlarges the holes by this amount for clearance. Know item lists have exact sizes, some clearance is needed.<br>`default = 0.65`
+`itemholder_hole_depth` | ![](/assets/openscad/gridfinity-extended/gridfinity_item_holder-hole_depth_text.gif){:.wrap-lightbox width="200" }<br>Depth of hole, Overrides the know item depth. Depth is limited by floor height.
+`itemholder_hole_sides` | ![](/assets/openscad/gridfinity-extended/gridfinity_item_holder-hole_sides_text.gif){:.wrap-lightbox width="200" }<br>The number of sides for the hole, when custom is selected. Passed as the FN to a circle.
+`itemholder_hole_size` | ![](/assets/openscad/gridfinity-extended/gridfinity_item_holder-hole_size_text.gif){:.wrap-lightbox width="200" }<br>The size the hole (diameter), when custom is selected.
+`itemholder_hole_gridx` | ![](/assets/openscad/gridfinity-extended/gridfinity_item_holder-hole_grid_text.gif){:.wrap-lightbox width="200" }<br>Number of items in the x axis. Override the dynamic calculated items, 0 = dynamic<br>`default = 0`
 `itemholder_hole_gridy` | Number of items in the y axis. Override the dynamic calculated items, 0 = dynamic. Half values (3.5) is only valid for hex grid.<br>`default = 0`
-`itemholder_auto_bin_height` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-auto_bin_height_text.gif" alt="" width="200"/><br>Auto set the bin height and floor height based on the hole depth. Ensures that the item will fit.
-`itemholder_compartments` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-compartments_text.gif" alt="" width="200"/><br>Number of compartments (group of items)<br> `default = [1,1]`;
-`itemholder_compartment_spacing` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-compartment_spacing_text.gif" alt="" width="200"/><br>Spacing around the compartments, including the walls if its single compartment.<br>`default = 3`
-`itemholder_compartment_centered` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-compartment_centered_text.gif" alt="" width="200"/><br>Center the holes within the compartments.<br>`default=true`
-`itemholder_compartment_fill` | <img src="../../../assets/openscad/gridfinity-extended/gridfinity_item_holder-compartment_fill_text.gif" alt="" width="200"/><br> How to fill the compartment.<br>`default = none`<br>**Options**<br>`none`: no fill, will use `itemholder_hole_spacing`.<br>`space`: Space in increased to fill compartment.<br>`crop`: Overfill an crop, not useful here.
+`itemholder_auto_bin_height` | ![](/assets/openscad/gridfinity-extended/gridfinity_item_holder-auto_bin_height_text.gif){:.wrap-lightbox width="200" }<br>Auto set the bin height and floor height based on the hole depth. Ensures that the item will fit.
+`itemholder_compartments` | ![](/assets/openscad/gridfinity-extended/gridfinity_item_holder-compartments_text.gif){:.wrap-lightbox width="200" }<br>Number of compartments (group of items)<br> `default = [1,1]`;
+`itemholder_compartment_spacing` | ![](/assets/openscad/gridfinity-extended/gridfinity_item_holder-compartment_spacing_text.gif){:.wrap-lightbox width="200" }<br>Spacing around the compartments, including the walls if its single compartment.<br>`default = 3`
+`itemholder_compartment_centered` | ![](/assets/openscad/gridfinity-extended/gridfinity_item_holder-compartment_centered_text.gif){:.wrap-lightbox width="200" }<br>Center the holes within the compartments.<br>`default=true`
+`itemholder_compartment_fill` | ![](/assets/openscad/gridfinity-extended/gridfinity_item_holder-compartment_fill_text.gif){:.wrap-lightbox width="200" }<br> How to fill the compartment.<br>`default = none`<br>**Options**<br>`none`: no fill, will use `itemholder_hole_spacing`.<br>`space`: Space in increased to fill compartment.<br>`crop`: Overfill an crop, not useful here.
 `itemholder_customcompartments` | TBA
 
 # know items

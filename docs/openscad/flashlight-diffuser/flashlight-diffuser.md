@@ -25,7 +25,7 @@ Setting | Description
 `TorchOverlap` | Section of diffuser that fits on the torch (mm)
 
 ## Diffuser
-<img src="../../../assets/openscad/flashlight-diffuser/diffuser-style.gif" alt="openscad Subdivisions" width="300"/><BR>
+![openscad Subdivisions](/assets/openscad/flashlight-diffuser/diffuser-style.gif){:.wrap-lightbox width="300" }<BR>
 
 Setting | Description
 -|-

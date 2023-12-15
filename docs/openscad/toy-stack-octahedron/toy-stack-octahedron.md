@@ -7,7 +7,7 @@ parent: OpenSCAD Projects
 permalink: /docs/openscad/toy-stack-octahedron
 ---
 
-<img src="../../../assets/openscad/toy-stack-octahedron/multi.png" alt="openscad label" width="300"/><BR>
+![Octahedron](/assets/openscad/toy-stack-octahedron/multi.png){:.wrap-lightbox width="300" }<BR>
 
 This is a kids toy that is made up of multiple extruded Octahedron shapes.
 
@@ -25,19 +25,19 @@ The shapes are based around 25mm Octahedron. To help prevent the risk of choking
 - Repo
 
 ## Sample designs
-<img src="../../../assets/openscad/toy-stack-octahedron/stack.png" alt="openscad label" width="200"/>
-<img src="../../../assets/openscad/toy-stack-octahedron/tower.png" alt="openscad label" width="200"/>
-<img src="../../../assets/openscad/toy-stack-octahedron/boat.png" alt="openscad label" width="200"/>
+![Octahedron stack](/assets/openscad/toy-stack-octahedron/stack.png){:.wrap-lightbox width="200" }
+![Octahedron tower](/assets/openscad/toy-stack-octahedron/tower.png){:.wrap-lightbox width="200" }
+![Octahedron boat](/assets/openscad/toy-stack-octahedron/boat.png){:.wrap-lightbox width="200" }
 <BR>
-<img src="../../../assets/openscad/toy-stack-octahedron/bigdog.png" alt="openscad label" width="200"/>
-<img src="../../../assets/openscad/toy-stack-octahedron/dog.png" alt="openscad label" width="200"/>
-<img src="../../../assets/openscad/toy-stack-octahedron/ring.png" alt="openscad label" width="200"/>
+![Octahedron bigdog](/assets/openscad/toy-stack-octahedron/bigdog.png){:.wrap-lightbox width="200" }
+![Octahedron dog](/assets/openscad/toy-stack-octahedron/dog.png){:.wrap-lightbox width="200" }
+![Octahedron ring](/assets/openscad/toy-stack-octahedron/ring.png){:.wrap-lightbox width="200" }
 <BR>
-<img src="../../../assets/openscad/toy-stack-octahedron/bigfrog.png" alt="openscad label" width="200"/>
-<img src="../../../assets/openscad/toy-stack-octahedron/frog.png" alt="openscad label" width="200"/>
-<img src="../../../assets/openscad/toy-stack-octahedron/potplant.png" alt="openscad label" width="200"/>
+![Octahedron bigfrog](/assets/openscad/toy-stack-octahedron/bigfrog.png){:.wrap-lightbox width="200" }
+![Octahedron frog](/assets/openscad/toy-stack-octahedron/frog.png){:.wrap-lightbox width="200" }
+![Octahedron potplant](/assets/openscad/toy-stack-octahedron/potplant.png){:.wrap-lightbox width="200" }
 <BR>
-<img src="../../../assets/openscad/toy-stack-octahedron/bird.png" alt="openscad label" width="200"/>
-<img src="../../../assets/openscad/toy-stack-octahedron/owl.png" alt="openscad label" width="200"/>
-<img src="../../../assets/openscad/toy-stack-octahedron/tree.png" alt="openscad label" width="200"/>
+![Octahedron bird](/assets/openscad/toy-stack-octahedron/bird.png){:.wrap-lightbox width="200" }
+![Octahedron owl](/assets/openscad/toy-stack-octahedron/owl.png){:.wrap-lightbox width="200" }
+![Octahedron tree](/assets/openscad/toy-stack-octahedron/tree.png){:.wrap-lightbox width="200" }
 <BR>

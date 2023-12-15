@@ -18,15 +18,15 @@ grand_parent: OpenSCAD Projects
 </details>
 
 # Base Plate Settings
-<img src="../../../assets/openscad/gridfinity-extended/gridfinity_baseplate-baseplate_text.gif" alt="openscad Subdivisions" width="300"/>
+![openscad Subdivisions](/assets/openscad/gridfinity-extended/gridfinity_baseplate-baseplate_text.gif){:.wrap-lightbox width="300" }
 
 Setting | Description
 -|-
 `Width` | X dimension in grid units  (multiples of 42mm)<br>`[ 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]`
 `Depth` | Y dimension in grid units (multiples of 42mm)<br>`[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]`
 `Plate_Style` | The style of the plate to generate.<br>**Options** <br>`base`: Base plate to go under Gridfinity bins.<br>`lid`:Lid Plate, that go on a Gridfinity bin and is also a base 
-`Base_Plate_Options` | Options for the **base plate**.<br>**Options**<br><img src="../../../assets/openscad/gridfinity-extended/gridfinity_baseplate-baseplate_text.gif" alt="openscad label" width="150"/><br>`default`:Default, simple base grid<br><img src="../../../assets/openscad/gridfinity-extended/gridfinity_baseplate-magnet_text.gif" alt="openscad label" width="150"/><BR>`Magnet`:Efficient magnet base, <br><img src="../../../assets/openscad/gridfinity-extended/gridfinity_baseplate-weighted_text.gif" alt="openscad label" width="150"/><br>`Weighted`: Thicker base with space for weights
-`Lid_Options` | Options for the **lid plate**<br>**Options**<br><img src="../../../assets/openscad/gridfinity-extended/gridfinity_baseplate-lid_text.gif" alt="openscad label" width="150"/><br>`default`: Lid that is also a Gridfinity base<br><img src="../../../assets/openscad/gridfinity-extended/gridfinity_baseplate-lid_flat_base_text.gif" alt="openscad label" width="150"/><br>`flat`: Removes the internal grid from base the lid<BR><img src="../../../assets/openscad/gridfinity-extended/gridfinity_baseplate-lid_half_pitch_text.gif" alt="openscad label" width="150"/><br>`halfpitch`: Adds half pitch grid to the base of the lid
+`Base_Plate_Options` | Options for the **base plate**.<br>**Options**<br>![openscad label](/assets/openscad/gridfinity-extended/gridfinity_baseplate-baseplate_text.gif){:.wrap-lightbox width="150" }<br>`default`:Default, simple base grid<br>![openscad label](/assets/openscad/gridfinity-extended/gridfinity_baseplate-magnet_text.gif){:.wrap-lightbox width="150" }<BR>`Magnet`:Efficient magnet base, <br>![openscad label](/assets/openscad/gridfinity-extended/gridfinity_baseplate-weighted_text.gif){:.wrap-lightbox width="150" }<br>`Weighted`: Thicker base with space for weights
+`Lid_Options` | Options for the **lid plate**<br>**Options**<br>![openscad label](/assets/openscad/gridfinity-extended/gridfinity_baseplate-lid_text.gif){:.wrap-lightbox width="150" }<br>`default`: Lid that is also a Gridfinity base<br>![openscad label](/assets/openscad/gridfinity-extended/gridfinity_baseplate-lid_flat_base_text.gif){:.wrap-lightbox width="150" }<br>`flat`: Removes the internal grid from base the lid<BR>![openscad label](/assets/openscad/gridfinity-extended/gridfinity_baseplate-lid_half_pitch_text.gif){:.wrap-lightbox width="150" }<br>`halfpitch`: Adds half pitch grid to the base of the lid
 `Custom_Grid_Enabled`| Enables custom base plate shapes. This can only be done by the script. This only works for the Base plate not the lid.
 
 # Size Customisation
@@ -60,7 +60,7 @@ The xpos1 to xpos7 variables are each arrays of 7 values creating a 7 by 7 grid,
 I am not sure it this is that useful, but its possible and was fun to code, so here we are.
 
 **Example**<br>
-<img src="../../../assets/openscad/gridfinity-extended/gridfinity_baseplate-customsize_text.gif" alt="openscad label" width="300"/><br>
+![openscad label](/assets/openscad/gridfinity-extended/gridfinity_baseplate-customsize_text.gif){:.wrap-lightbox width="300" }<br>
 ```
 xpos1 = [3,4,0,0,0,0,0];
 xpos2 = [2,2,0,5,0,0,0];

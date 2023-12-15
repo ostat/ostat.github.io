@@ -1,9 +1,10 @@
 ---
 layout: default
-title: CNC Clamps
+title: Hose adapters
 nav_order: 1
 has_children: true
-permalink: /docs/openscad/hoseadapter
+parent: OpenSCAD Projects
+permalink: /docs/openscad/hose-adapter
 ---
 
 # Connector 1
