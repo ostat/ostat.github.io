@@ -30,7 +30,7 @@ Setting | Description
 `filled_in` | ![gridfinity filled in](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-filledin_text.gif){:.wrap-lightbox  width="150" }<br>Fill in solid block (overrides all following options). Useful for generating a block to be later modified in OpenSCAD or exported and modified in another tool.<br>`default = "off"`<br>**Options**<bR>`off`: not filled in<br>`on`: filled in but still stackable<br>`notstackable`:filled in an not stackable<br>
 `label` | ![gridfinity label](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-label_text.gif){:.wrap-lightbox width="150" }<br>Include overhang for labeling. <br>`default=disabled`<br>**Options**<br>`disabled`: no label<br>`left`: Left aligned<br>`right`: Right aligned<br>`center`: Center aligned<br>`leftchamber`: One label per chamber, left aligned<br>`rightchamber`: One label per chamber, right aligned<br>`centerchamber`: One label per chamber, center aligned<br>
 `label_width`| Width of the label in number of Gridfinity units (42mm), or zero means full width.
-`wall_thickness` | thickness of the bin walls, Zack's design is 0.95<br>`default = 0.95`
+`wall_thickness` | Thickness of the bin walls, Zack's design is 0.95<br>`default = 0`, this will dynamically increase the wall as the bin size increases. `height < 8 = 0.95`, `height > 8 and < 16 = 1.2`, `height >= 16 = 1.6` <BR>
 `lip_style` | ![gridfinity lip style](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-lip_style_text.gif){:.wrap-lightbox width="150" }<br>Removes some or all of lip.<br>`default = "normal"`<br>**Options**<br>`normal`: normal lip<br>`reduced`: smaller lip<br>`none`: no lip<br>
 `position` | ![gridfinity position](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-position_text.gif){:.wrap-lightbox width="150" }<br>x and y position of the rendered bin. Useful of planing to further edit the bin with another script.<br>**options**<br>`default`: Centers x1 and y1<br>`center`: centers the whole bin<br>`zero`: Sets the lower left side of the bin on the zero mark
 
@@ -56,15 +56,15 @@ Setting | Description
 
 Setting | Description
 -|-
-`magnet_diameter` | Zack's design uses magnet diameter of 6.5. 0 would disable the magnet hole.
-`screw_depth` | Zack's design uses depth of 6. 0 would disable the screw hole.
+`magnet_diameter` | Zack's design uses magnet diameter of 6.5. `value of 0`: disables the magnet hole.
+`screw_depth` | Zack's design uses depth of 6. `value of 0`: disables the screw hole.
 `center_magnet_diameter` | ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-center_magnet_text.gif){:.wrap-lightbox width="200" }<br>Magnet to be added to the center of a gridfinity cell. This is expected to be used to hold the items in the bin like screws in place.<br>Diameter of the center magnet.
 `center_magnet_thickness` | Thickness of the center magnet.
 `hole_overhang_remedy` | ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-sequentialbridging_text.gif){:.wrap-lightbox width="200" }<br>Sequential bridging for hanging hole. Only  active only when both screws and magnets are nonzero (and this option is selected).<br>ref :[buried-nuts-and-hanging-holes](https://hydraraptor.blogspot.com/2014/03/buried-nuts-and-hanging-holes.html)<br>ref: [How to 3D Print bores without supports (Fusion 360 Masterclass)](https://www.youtube.com/watch?v=KBuWcT8XkhA)
-`box_corner_attachments_only` | ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-box_corner_attachments_only_text.gif){:.wrap-lightbox width="200" }<br>Only add attachments (magnets and screw) to box corners (prints faster). <br>`default = false`
+`box_corner_attachments_only` | ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-box_corner_attachments_only_text.gif){:.wrap-lightbox width="200" }<br>Only add attachments (magnets and screw) to box corners, instead of each corner of the each cell. Reduces print time and filament used. <br>`default = true`
 `floor_thickness` | ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-floorthickness_text.gif){:.wrap-lightbox width="200" }<br>Minimum thickness above cutouts in base (Zack's design is effectively 1.2).<br>`default = 0.7`
 `cavity_floor_radius`| ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-basecorner_text.gif){:.wrap-lightbox width="200" }<br>The radius between the wall and the floor.<br>**Options**<br>`-1`: default, matches the wall radius,<br>`0`: no radius<br>`>0`: sets the to provided value
-`efficient_floor` | ![OpenSCAD base efficient floor](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-efficient_floor_text.gif){:.wrap-lightbox width="200" }<BR>Efficient floor option saves material and time, but the internal floor is not flat (only applies if no magnets, screws, or finger-slide used).<br>`default = false`
+`efficient_floor` | ![OpenSCAD base efficient floor](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-efficient_floor_text.gif){:.wrap-lightbox width="200" }<BR>Light bin, saves material and print time, however the internal floor will not be flat (does not support finger slide).<br>`default = false`
 `half_pitch` | ![OpenSCAD base efficient floor](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-halfpitch_text.gif){:.wrap-lightbox width="200" }<br>Subdivides the bottom pads in half, to allow half-cell offsets<BR>`default = false`
 `flat_base` | ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-flatbase_text.gif){:.wrap-lightbox width="200" }<BR>Removes the base grid from inside the shape<BR>`default = false`
 
@@ -110,12 +110,14 @@ Setting | Description
 Setting | Description
 -|-
 `wallpattern_enabled` | Enables a grid pattern to be removed from the walls of the bin.<br>`default=false`
-`wallpattern_hexgrid` | Switches between a square and hex pattern<br>`default=true` which is hex.
+`wallpattern_style` | ![OpenSCAD base wallpattern style](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-wallpatternstyle_text.gif){:.wrap-lightbox width="200" }<BR> Sets the grid style for the wall pattern.<br>**Options**<br>'`grid`: Aligns the holes in a square grid<br>`hexgrid`: Aligns the holes in a hexgrid. `voronoi`: Voronoi pattern of completely random placement.<br>`voronoigrid`: Voronoi pattern aligned to a grid,`voronoihexgrid`: : Voronoi pattern aligned to a hex grid.
 `wallpattern_walls` | Selects the walls to enable the wall pattern on. [front, back, left, right].<br>I.E. [1,0,0,0] front only, [1,1,1,1] all walls.
-`wallpattern_fill` | ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-wallpatternfill_text.gif){:.wrap-lightbox width="200" }<BR>The pattern wont fill the space completely. These options allow for extending the patter to fill the space. Note, the pattern is rotated to make the hex shape easier to print. As such you need to swap vertical and horizontal.<br>**Options**<br>`none`: no fill<br>`space`: Increase Space between grid to fill<br>`crop`: Over fill and crop the the allowed space<br>`crophorizontal`:Crop horizontal only<br>`cropvertical`: Crop vertical only<br>`crophorizontal_spacevertical`: Crop horizontal space vertical<br>`cropvertical_spacehorizontal`: Crop vertical space horizontal<br>`spacevertical`:Space vertical<br>`spacehorizontal`:Space horizontal
-`wallpattern_hole_sides` | Number of sides of the hole.<br>**Options**<br>`4`: square<br>`6`: hexagon<br>`64`: circle
+`wallpattern_fill` | ![OpenSCAD base wallpattern fill](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-wallpatternfill_text.gif){:.wrap-lightbox width="200" }<BR>The pattern wont fill the space completely. These options allow for extending the patter to fill the space. Note, the pattern is rotated to make the hex shape easier to print. As such you need to swap vertical and horizontal.<br>**Options**<br>`none`: no fill<br>`space`: Increase Space between grid to fill<br>`crop`: Over fill and crop the the allowed space<br>`crophorizontal`:Crop horizontal only<br>`cropvertical`: Crop vertical only<br>`crophorizontal_spacevertical`: Crop horizontal space vertical<br>`cropvertical_spacehorizontal`: Crop vertical space horizontal<br>`spacevertical`:Space vertical<br>`spacehorizontal`:Space horizontal<br>Does not apply to `voronoi` styles.
+`wallpattern_hole_sides` | Number of sides of the hole.<br>**Options**<br>`4`: square<br>`6`: hexagon<br>`64`: circle<br>Does not apply to `voronoi` styles.
 `wallpattern_hole_size` | Size of the hole
 `wallpattern_hole_spacing` | Spacing between pattern
+`wallpattern_voronoi_noise` | amount of noise to add to `voronoigrid` and `voronoihexgrid`
+`wallpattern_voronoi_radius` | Radius of corners on voronoi shapes
 
 ---
 # Split bin
@@ -127,11 +129,6 @@ Setting | Description
 `extention_x_enabled` | Cuts the first half cell along the x axis (21mm) from the bin.
 `extention_y_enabled` | Cuts the first half cell along the y axis (21mm) from the bin.
 `extention_tabs_enabled` | Adds tabs to the cut walls to assist in gluing together.
-
-/* [Split] */
-default_extention_x_enabled = false;
-default_extention_y_enabled = false;
-default_extention_tabs_enabled = true;
 
 ---
 # Debug
