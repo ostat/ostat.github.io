@@ -61,7 +61,7 @@ Setting | Description
 `center_magnet_diameter` | ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-center_magnet_text.gif){:.wrap-lightbox width="200" }<br>Magnet to be added to the center of a gridfinity cell. This is expected to be used to hold the items in the bin like screws in place.<br>Diameter of the center magnet.
 `center_magnet_thickness` | Thickness of the center magnet.
 `hole_overhang_remedy` | ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-sequentialbridging_text.gif){:.wrap-lightbox width="200" }<br>Sequential bridging for hanging hole. Only  active only when both screws and magnets are nonzero (and this option is selected).<br>ref :[buried-nuts-and-hanging-holes](https://hydraraptor.blogspot.com/2014/03/buried-nuts-and-hanging-holes.html)<br>ref: [How to 3D Print bores without supports (Fusion 360 Masterclass)](https://www.youtube.com/watch?v=KBuWcT8XkhA)
-`box_corner_attachments_only` | ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-box_corner_attachments_only_text.gif){:.wrap-lightbox width="200" }<br>Only add attachments (magnets and screw) to box corners, instead of each corner of the each cell. Reduces print time and filament used. <br>`default = true`
+`box_corner_attachments_only` | ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-box_corner_attachments_only_text.gif){:.wrap-lightbox width="200" }<br>Only add attachments (magnets and screw) to box corners, instead of each corner of the each cell. Reduces print time and filament used. <br>A standard 2x3x3 box goes from 2h50m 54g to 2h20m 50g. A light bin with corner attachments goes from 2h40m 40g to 1h40m 28g with corner only, or 1h23m 25g for no attachments. A standard 5x5x3 goes from 10h57 207g to 8h37m 197g. These are all relative values.<br>`default = true`
 `floor_thickness` | ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-floorthickness_text.gif){:.wrap-lightbox width="200" }<br>Minimum thickness above cutouts in base (Zack's design is effectively 1.2).<br>`default = 0.7`
 `cavity_floor_radius`| ![OpenSCAD base flatbase](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-basecorner_text.gif){:.wrap-lightbox width="200" }<br>The radius between the wall and the floor.<br>**Options**<br>`-1`: default, matches the wall radius,<br>`0`: no radius<br>`>0`: sets the to provided value
 `efficient_floor` | ![OpenSCAD base efficient floor](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-efficient_floor_text.gif){:.wrap-lightbox width="200" }<BR>Light bin, saves material and print time, however the internal floor will not be flat (does not support finger slide).<br>`default = false`
@@ -73,7 +73,7 @@ Setting | Description
 ![OpenSCAD Finger Slide](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-fingerslide_text.gif){:.wrap-lightbox width="300" }
 
 {: .note }
-**Finger Slide** does not work with **Efficient Floor**.<BR>**Finger Slide** does not work with **Wall Pattern**.
+**Finger Slide** does not work with **Wall Pattern**.
 
 Setting | Description
 -|-
