@@ -87,7 +87,7 @@ I want lights that can be controlled by a mains power switch. I want the brightn
 - While the auto chromatic rule is disabled the user can use the webui to set the colour and brightness.
 
 
-Tasmota commands needed to be set
+### Tasmota commands needed to be set
  - **Timezone**: Set the time zone `Timezone +10`
  - **WebTime**: Show the time in the web ui. `WebTime 0,19`
  - **Latitude**: Set latitude in decimal degrees format (for sunrise and sunset) `Latitude -33.893681`
@@ -98,6 +98,8 @@ Tasmota commands needed to be set
  ~~- **SetOption91**: Enable Fade at boot and power on. By default fading is not enabled at boot because of stuttering caused by wi-fi connection~~
  - **Fade**: enable fade `Fade 1`
  - **rule1**: enable rule1 `rule1 1`
+
+### Tasmota Rules
 ```
 //mem1, last boot was less 10 seconds
 //val1, midday between sunrise and sunset
