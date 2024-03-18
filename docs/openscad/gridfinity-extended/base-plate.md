@@ -36,7 +36,7 @@ The xpos1 to xpos7 variables are each arrays of 7 values creating a 7 by 7 grid,
 
 - `0`: The cell is off
 - `1`: The cell is on, and all corners will be rounded.
-- `2-16`: Represent a 4bit value used to calculate what corners of the cell should be rounded or square cut. Bitwise logic then used  to perform the calculation, 2 must be subtracted from the value for the bitwise logic to make work, this allows 0 and 1 to turn the cell on and off
+- `2-17`: Represent a 4bit value used to calculate what corners of the cell should be rounded or square cut. Bitwise logic then used  to perform the calculation, 2 must be subtracted from the value for the bitwise logic to make work, this allows 0 and 1 to turn the cell on and off
   - *`0` The cell is off*
   - *`1` The cell is on all corners are rounded*
   - *ref  [4,3,2,1] The corner that relates to the bitwise value*
