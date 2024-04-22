@@ -30,8 +30,8 @@ Summary showing the print time and filament used for a bin of `width 2 depth 3 h
 options |Attachments|Corner Attachments|Corner Magnets|no Attachments
 -|-|-|-|-
 Standard Base|2h27m<br>64.46g|2h4m<br>62.62g|1h:54m<br>58.30g|1h53m<br>58.03g
-Efficient Base|2h10m<br>47.52g|1h23m<br>35.78g|-|1h11m<br>32.82g
-Smooth Efficient Base|2h10m<br>47.52g|1h23m<br>35.78g|-|1h11m<br>32.82g
+Efficient Base|2h10m<br>47.52g|1h23m<br>35.78g|1h16m<br>33.97g|1h11m<br>32.82g
+Smooth Efficient Base|2h12m<br>48.37g|1h29m<br>37.44g|1h20m<br>34.58g|1h18m<br>34.16g
 Flat Base|-|-|-|1h33m<br>51.64g
 Flat Base - Efficient Floor |-|-|-|1h3m<br>30.40g
 Flat Base - Smooth Efficient Floor |-|-|-|1h5m<br>31.26g
