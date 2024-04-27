@@ -1,6 +1,6 @@
 ---
 layout: default
-title: OpenSCAD Hose Adapter Transitions
+title: Transitions
 nav_order: 1
 has_children: true
 parent: OpenSCAD Hose adapters
