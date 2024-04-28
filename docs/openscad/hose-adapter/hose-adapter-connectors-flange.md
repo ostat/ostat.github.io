@@ -9,6 +9,12 @@ permalink: /docs/openscad/hose-adapter/connectors/flange
 ## Connector - Flange
 ![Flange](/assets/openscad/hose-adapters/vacuum_hose_adapter-flange_demo_text.gif){:.wrap-lightbox width="500"}<br>
 
+## Links
+Pregenerated models that can be downloaded.
+ - [Printables - Hose Flanges](https://www.printables.com/model/297912-vacuum-hose-flanges-to-connect-to-flat-surfaces)
+
+## Options
+
 Setting | Description
 -|-
 `End_Flange_Width` | ![vacuum_hose_adapter flange_width](/assets/openscad/hose-adapters/vacuum_hose_adapter-flange_width_text.gif){:.wrap-lightbox  width="150" }<br>Width of Flange added to the connector diameter
