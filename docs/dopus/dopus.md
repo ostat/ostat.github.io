@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Directory Opus
-nav_order: 1
 has_children: true
+nav_order: 9
 permalink: /docs/dopus
 ---
 

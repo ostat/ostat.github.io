@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Gridfinity Drawers
-parent: Gridfinity Extended
-grand_parent: OpenSCAD Projects
+parent: OpenSCAD Gridfinity Extended
 nav_order: 4
 ---
 

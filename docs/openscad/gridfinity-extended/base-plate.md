@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Gridfinity Base Plate
-parent: Gridfinity Extended
-grand_parent: OpenSCAD Projects
+parent: OpenSCAD Gridfinity Extended
 nav_order: 3
 ---
 

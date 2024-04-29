@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Extension Item Holder
-parent: Gridfinity Extended
-grand_parent: OpenSCAD Projects
+parent: OpenSCAD Gridfinity Extended
 ---
 
 # Navigation Structure

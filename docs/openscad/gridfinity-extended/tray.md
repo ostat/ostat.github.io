@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Extension Tray
-parent: Gridfinity Extended
-grand_parent: OpenSCAD Projects
+parent: OpenSCAD Gridfinity Extended
 ---
 
 # Tray Extension

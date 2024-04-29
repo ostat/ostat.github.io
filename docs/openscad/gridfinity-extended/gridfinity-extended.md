@@ -1,9 +1,8 @@
 ---
 layout: default
-title: Gridfinity Extended
+title: OpenSCAD Gridfinity Extended
 nav_order: 1
 has_children: true
-parent: OpenSCAD Projects
 permalink: /docs/openscad/gridfinity-extended
 ---
 

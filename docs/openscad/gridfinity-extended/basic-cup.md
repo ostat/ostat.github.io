@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Gridfinity Basic Cup
-parent: Gridfinity Extended
-grand_parent: OpenSCAD Projects
+parent: OpenSCAD Gridfinity Extended
 nav_order: 2
 ---
 
@@ -19,6 +18,9 @@ nav_order: 2
 </details>
 
 ![gridfinity extended](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-multi_text.gif){:.wrap-lightbox width="300"}
+
+# Online Script
+[Gridfinity Basic Cup](https://seasick.github.io/openscad-web-gui/?https%3A%2F%2Fraw.githubusercontent.com%2Fostat%2Fgridfinity_extended_openscad%2Fmain%2Fcombined%2Fgridfinity_basic_cup.scad)
 
 # General Cup Settings
 

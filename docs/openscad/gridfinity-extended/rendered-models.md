@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Downloadable Models 
-parent: Gridfinity Extended
-grand_parent: OpenSCAD Projects
+parent: OpenSCAD Gridfinity Extended
 ---
 
 You can use the OpenSCAD model to create models that suit your needs. However I have pregenerated some of the more common models, these are hosed on printables.
