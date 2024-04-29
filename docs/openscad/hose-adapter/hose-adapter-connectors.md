@@ -7,7 +7,7 @@ parent: OpenSCAD Hose adapters
 permalink: /docs/openscad/hose-adapter/connectors
 ---
 # Connectors
-There are currently 5 types of connectors, each can be use as **connector 1** or **connector 2**. Each connector type has settings that are only relevant to that specific connectors. Some connectors have no configurable settings.
+There are currently 8 types of connectors, each can be use as **End 1** or **End 2**. Each connector type has settings that are only relevant to that specific connectors. Some connectors have no configurable settings.
 
 ![Hose Adapter connectors](/assets/openscad/hose-adapters/vacuum_hose_adapter-demo_text.gif){:.wrap-lightbox width="500"}
 
