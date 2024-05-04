@@ -7,7 +7,14 @@ permalink: /docs/openscad/hose-adapter
 ---
 # OpenSCAD Hose adapters
 ![Hose Adapter connectors](/assets/openscad/hose-adapters/vacuum_hose_adapter-demo_text.gif){:.wrap-lightbox width="500"}<br>
-This is an OpenSCAD script for creating hose adapters. There are two groupings of parts **connectors** and **transitions**. Each (well most) Adapters are made up of three parts.
+This is an OpenSCAD script for creating hose adapters.
+
+## Repo
+Here you can find the scripts, to create you own adapters.
+[ostat/vacuum-hose-adapter-openscad](https://github.com/ostat/vacuum-hose-adapter-openscad).
+
+## Overview
+There are two groupings of parts **connectors** and **transitions**. Each (well most) Adapters are made up of three parts.
  - **End1** the first connector (shown in pink)
  - **End2** the second connector (shown in blue)
  - **transition** that connects them together (shown in green). 
