@@ -10,4 +10,5 @@ For the best performance you can download the repo and run the scripts in OpenSC
 Currently some features don't work in the browser. Specifically any of the preview features including colouring, calipers and debug slice will not work.
 
 ## Online scripts
+ - [Offical Gridfinity Extended on MakerWorld Customiser](https://makerworld.com/en/models/481168)<br>
  - [Gridfinity Extended - Basic Cup](https://seasick.github.io/openscad-web-gui/?https%3A%2F%2Fraw.githubusercontent.com%2Fostat%2Fgridfinity_extended_openscad%2Fmain%2Fcombined%2Fgridfinity_basic_cup.scad)

@@ -26,7 +26,14 @@ Built on this library are added base features and a customisable extended featur
 
 Details of the [Gridfinity specifications](https://gridfinity.xyz/specification/) can be found on the official site https://gridfinity.xyz/.
 
-## Repo
+## Resources
+### Online Customiser
+[Offical Gridfinity Extended on MakerWorld Customiser](https://makerworld.com/en/models/481168)<br>
+The Official online version Gridfinity Extended is currently hosted on MakerWord's customiser (I prefer people don't host it in other places). I chose MakerWork as this version seems to work for all my models.
+The Online model gives you online access to the model generation, without the need to use OpenSCAD on a PC. You do lose a couple of features, most notably the preview option. All online generators do not support preview, so colours or debug slice or calipers.
+
+
+### Repo
 GitHub repo [ostat/gridfinity_openscad](https://github.com/ostat/gridfinity_extended_openscad)
 
 ## Added features included
