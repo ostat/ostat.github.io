@@ -2,6 +2,7 @@
 layout: default
 title: Gridfinity Basic Cup
 parent: OpenSCAD Gridfinity Extended
+has_children: true
 nav_order: 2
 ---
 

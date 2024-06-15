@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Basic Cup Optimisations 
-parent: OpenSCAD Gridfinity Extended
+parent: Gridfinity Basic Cup
+grand_parent: OpenSCAD Gridfinity Extended
 nav_order: 2
 ---
 
