@@ -14,9 +14,9 @@ When adding the magnets I prefer to always use an even number of magnets and alt
 
 ## Links
 Pregenerated models that can be downloaded.
- - [Printables - 50mm magnetic vacuum hose quick connector](https://www.printables.com/model/283250-50mm-magnetic-vacuum-hose-connector)
- - [Printables - 75mm magnetic vacuum hose quick connector](https://www.printables.com/model/463306-75mm-magnetic-vacuum-hose-quick-connector)
- - [Printables - 100mm magnetic vacuum hose quick connector ](https://www.printables.com/model/283255-100mm-magnetic-vacuum-hose-connector)
+ - [Printables - 50mm magnetic vacuum hose quick connector](https://www.printables.com/model/283250-50mm-magnetic-vacuum-hose-connector){:target="_blank"} 
+ - [Printables - 75mm magnetic vacuum hose quick connector](https://www.printables.com/model/463306-75mm-magnetic-vacuum-hose-quick-connector){:target="_blank"} 
+ - [Printables - 100mm magnetic vacuum hose quick connector ](https://www.printables.com/model/283255-100mm-magnetic-vacuum-hose-connector){:target="_blank"} 
 
 ## Options
 

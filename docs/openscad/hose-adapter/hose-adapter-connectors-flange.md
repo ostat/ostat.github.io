@@ -11,7 +11,7 @@ permalink: /docs/openscad/hose-adapter/connectors/flange
 
 ## Links
 Pregenerated models that can be downloaded.
- - [Printables - Hose Flanges](https://www.printables.com/model/297912-vacuum-hose-flanges-to-connect-to-flat-surfaces)
+ - [Printables - Hose Flanges](https://www.printables.com/model/297912-vacuum-hose-flanges-to-connect-to-flat-surfaces){:target="_blank"} 
 
 ## Options
 

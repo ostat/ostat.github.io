@@ -11,4 +11,4 @@ This connector is compatible with [PeterH](https://www.printables.com/@PeterH)'s
 
 ## Links
 Pregenerated models that can be downloaded.
- - [Printables - Camlock Compatible Adapters and Nozzles](https://www.printables.com/model/540409-camlock-adapters-and-nozles)
+ - [Printables - Camlock Compatible Adapters and Nozzles](https://www.printables.com/model/540409-camlock-adapters-and-nozles){:target="_blank"} 

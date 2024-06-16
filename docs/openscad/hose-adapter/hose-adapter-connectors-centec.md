@@ -11,4 +11,4 @@ This connector is compatible with CenTec Quick connect system.<br>
 
 ## Links
 Pregenerated models that can be downloaded.
- - [Printables - CenTec Quick Click Compatible Adapters](https://www.printables.com/model/794430-cen-tec-quick-click-compatiable)
+ - [Printables - CenTec Quick Click Compatible Adapters](https://www.printables.com/model/794430-cen-tec-quick-click-compatiable){:target="_blank"} 

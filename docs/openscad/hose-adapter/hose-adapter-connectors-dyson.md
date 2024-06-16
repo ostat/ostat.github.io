@@ -11,4 +11,4 @@ This connector is compatible with the Dyson DC35/DC45/DC52/DC58/DC59/V6 vacuums.
 
 ## Links
 Pregenerated models that can be downloaded.
- - [Printables - Dyson V6 Compatible Adapters and Nozzles](https://www.printables.com/model/303766-dyson-v6-hose-attachments-and-nozzles)
+ - [Printables - Dyson V6 Compatible Adapters and Nozzles](https://www.printables.com/model/303766-dyson-v6-hose-attachments-and-nozzles){:target="_blank"} 

@@ -12,17 +12,17 @@ The hose connector is the most generic connector. Its intended to be pushed insi
 
 ## Links
 Pregenerated models that can be downloaded.
- - [Printables - Vacuum hose adapters for all common sizes](https://www.printables.com/model/283238-vacuum-hose-adapters-for-all-common-sizes)
- - [Printables - Vacuum hose Y connector - splitter for all common sizes](https://www.printables.com/model/325999-vacuum-hose-y-connector-splitter-for-all-common-si)
- - [Printables - Tube Fittings 4mm-24mm sizes ](https://www.printables.com/model/328572-tube-fittings-4mm-24mm-sizes)
- - [Printables - Vacuum hose to tubing adapters for all common sizes](https://www.printables.com/model/328599-vacuum-hose-to-tubing-adapters-for-all-common-size)
- - [Printables - Tube Y connector / splitter fittings 4mm-24mm sizes](https://www.printables.com/model/328647-tube-y-connector-splitter-fittings-4mm-24mm-sizes)
- - [Printables - 30° elbow vacuum hose adapters for all common sizes](https://www.printables.com/model/284701-30deg-elbow-vacuum-hose-adapters-for-all-common-si)
- - [Printables - 30° tapered elbow vacuum hose adapters for all common sizes](https://www.printables.com/model/284834-30deg-tapered-elbow-vacuum-hose-adapters-for-all-c)
- - [Printables - 45° elbow vacuum hose adapters for all common sizes](https://www.printables.com/model/284846-45deg-elbow-vacuum-hose-adapters-for-all-common-si)
- - [Printables - 45° tapered elbow vacuum hose adapters for all common sizes](https://www.printables.com/model/284877-45deg-tapered-elbow-vacuum-hose-adapters-for-all-c)
- - [Printables - 90° elbow vacuum hose adapters for all common sizes](https://www.printables.com/model/284879-90deg-elbow-vacuum-hose-adapters-for-all-common-si)
- - [Printables - 90° tapered elbow vacuum hose adapters for all common sizes](https://www.printables.com/model/284929-90deg-tapered-elbow-vacuum-hose-adapters-for-all-c)
+ - [Printables - Vacuum hose adapters for all common sizes](https://www.printables.com/model/283238-vacuum-hose-adapters-for-all-common-sizes){:target="_blank"} 
+ - [Printables - Vacuum hose Y connector - splitter for all common sizes](https://www.printables.com/model/325999-vacuum-hose-y-connector-splitter-for-all-common-si){:target="_blank"} 
+ - [Printables - Tube Fittings 4mm-24mm sizes ](https://www.printables.com/model/328572-tube-fittings-4mm-24mm-sizes){:target="_blank"} 
+ - [Printables - Vacuum hose to tubing adapters for all common sizes](https://www.printables.com/model/328599-vacuum-hose-to-tubing-adapters-for-all-common-size){:target="_blank"} 
+ - [Printables - Tube Y connector / splitter fittings 4mm-24mm sizes](https://www.printables.com/model/328647-tube-y-connector-splitter-fittings-4mm-24mm-sizes){:target="_blank"} 
+ - [Printables - 30° elbow vacuum hose adapters for all common sizes](https://www.printables.com/model/284701-30deg-elbow-vacuum-hose-adapters-for-all-common-si){:target="_blank"} 
+ - [Printables - 30° tapered elbow vacuum hose adapters for all common sizes](https://www.printables.com/model/284834-30deg-tapered-elbow-vacuum-hose-adapters-for-all-c){:target="_blank"} 
+ - [Printables - 45° elbow vacuum hose adapters for all common sizes](https://www.printables.com/model/284846-45deg-elbow-vacuum-hose-adapters-for-all-common-si){:target="_blank"} 
+ - [Printables - 45° tapered elbow vacuum hose adapters for all common sizes](https://www.printables.com/model/284877-45deg-tapered-elbow-vacuum-hose-adapters-for-all-c){:target="_blank"} 
+ - [Printables - 90° elbow vacuum hose adapters for all common sizes](https://www.printables.com/model/284879-90deg-elbow-vacuum-hose-adapters-for-all-common-si){:target="_blank"} 
+ - [Printables - 90° tapered elbow vacuum hose adapters for all common sizes](https://www.printables.com/model/284929-90deg-tapered-elbow-vacuum-hose-adapters-for-all-c){:target="_blank"} 
 
 
 ## Options

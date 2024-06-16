@@ -11,7 +11,7 @@ permalink: /docs/openscad/hose-adapter/connectors/nozzle
 
 ## Links
 Pregenerated models that can be downloaded.
- - [Printables - Vacuum nozzles for all common hose sizes](https://www.printables.com/model/316283-vacuum-nozzles-for-all-common-hose-sizes)
+ - [Printables - Vacuum nozzles for all common hose sizes](https://www.printables.com/model/316283-vacuum-nozzles-for-all-common-hose-sizes){:target="_blank"} 
 
 ## Options
 

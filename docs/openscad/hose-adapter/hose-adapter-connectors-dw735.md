@@ -11,4 +11,4 @@ This connector is compatible with the Dewalt DW735-XE and DW735x planer. If the 
 
 ## Links
 Pregenerated models that can be downloaded.
- - [Printables - Dewalt Planer Adapters](https://www.printables.com/model/560419-vacuum-adapters-for-dw735-dewalt-planer-all-common)
+ - [Printables - Dewalt Planer Adapters](https://www.printables.com/model/560419-vacuum-adapters-for-dw735-dewalt-planer-all-common){:target="_blank"} 

@@ -11,14 +11,14 @@ This is an OpenSCAD script for creating hose adapters.
 
 #Resources
 ### Online Customiser
-[Ostat's Hose Adapter on MakerWorld Customiser](https://makerworld.com/en/models/481868)<br>
+[Ostat's Hose Adapter on MakerWorld Customiser](https://makerworld.com/en/models/481868){:target="_blank"} <br>
 The Official online version of the Ostat's Hose Adapter is currently hosted on MakerWord's customiser (I prefer people don't host it in other places). I chose MakerWork as this version seems to work for all my models.
 The Online model gives you online access to the model generation, without the need to use OpenSCAD on a PC. You do lose a couple of features, most notably the preview option. All online generators do not support preview, so colours or debug slice or calipers.
 
 
 ### Repo
 Here you can find the scripts, to create you own adapters.
-[ostat/vacuum-hose-adapter-openscad](https://github.com/ostat/vacuum-hose-adapter-openscad).
+[ostat/vacuum-hose-adapter-openscad](https://github.com/ostat/vacuum-hose-adapter-openscad){:target="_blank"} .
 
 ## Overview
 There are two groupings of parts **connectors** and **transitions**. Each (well most) Adapters are made up of three parts.
