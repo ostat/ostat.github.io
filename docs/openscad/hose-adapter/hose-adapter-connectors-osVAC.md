@@ -3,7 +3,7 @@ layout: default
 title: Connector osVAC
 parent: Connectors
 grand_parent: OpenSCAD Hose adapters
-permalink: /docs/openscad/hose-adapter/connectors/dw735
+permalink: /docs/openscad/hose-adapter/connectors/osvac
 ---
 ## Connector - osVAC
 This connector is compatible with the osVAC system that is a project that was initiated by Hobbyhimmel: [https://ossso.de/osvac/](https://ossso.de/osvac/){:target="_blank"}
