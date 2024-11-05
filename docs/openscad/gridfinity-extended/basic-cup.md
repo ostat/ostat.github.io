@@ -30,14 +30,13 @@ Setting | Description
 `width` | X dimension in grid units  (multiples of 42mm)<br>options `[ 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]`
 `depth` | Y dimension in grid units (multiples of 42mm)<br>options `[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]`
 `height` | Height in Gridfinity height units (7mm) of the bin. Does not include the lip height which is about 4mm.
-`filled_in` | ![gridfinity filled in](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-filledin_text.gif){:.wrap-lightbox  width="150" }<br>Fill in solid block (overrides all following options). Useful for generating a block to be later modified in OpenSCAD or exported and modified in another tool.<br>`default = "off"`<br>**Options**<bR>`off`: not filled in<br>`on`: filled in but still stackable<br>`notstackable`:filled in an not stackable<br>
+`filled_in` | ![gridfinity filled in](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-filledin_text.gif){:.wrap-lightbox  width="150" }<br>Fill in solid block (overrides all following options). Useful for generating a block to be later modified in OpenSCAD or exported and modified in another tool.<br>`default = "disabled"`<br>**Options**<bR>`disabled`: not filled in<br>`enabled`: filled in to the Z height<br>`enabledfilllip`:Fill the cup and the Lip<br>
 `label` | ![gridfinity label](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-label_text.gif){:.wrap-lightbox width="150" }<br>Include overhang for labeling. <br>`default=disabled`<br>**Options**<br>`disabled`: no label<br>`left`: Left aligned<br>`right`: Right aligned<br>`center`: Center aligned<br>`leftchamber`: One label per chamber, left aligned<br>`rightchamber`: One label per chamber, right aligned<br>`centerchamber`: One label per chamber, center aligned<br>
 `label_relief`| ![gridfinity label relief](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-label_relief_text.gif){:.wrap-lightbox width="150" }<br>Creates a relief in the Label shelf, so that a sticker label can be affixed without impacting the ability to stack.<br>Default = 0, no relief.
 `label_width`| Width of the label in number of Gridfinity units (42mm), or zero means full width.
 `wall_thickness` | Thickness of the bin walls, Zack's design is 0.95<br>`default = 0`, this will dynamically increase the wall as the bin size increases. `height < 8 = 0.95`, `height > 8 and < 16 = 1.2`, `height >= 16 = 1.6` <BR>
-`lip_style` | ![gridfinity lip style](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-lip_style_text.gif){:.wrap-lightbox width="150" }<br>Removes some or all of lip.<br>`default = "normal"`<br>**Options**<br>`normal`: normal lip<br>`reduced`: smaller lip<br>`none`: no lip<br>
+`lip_style` | ![gridfinity lip style](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-lip_style_text.gif){:.wrap-lightbox width="150" }<br>Removes some or all of lip.<br>`default = "normal"`<br>**Options**<br>`normal`: normal lip<br>`reduced`: smaller lip<br>`minimum`: lip that is the wall thickness<br>`none`: no lip<br>
 `position` | ![gridfinity position](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-position_text.gif){:.wrap-lightbox width="150" }<br>x and y position of the rendered bin. Useful of planing to further edit the bin with another script.<br>**options**<br>`default`: Centers x1 and y1<br>`center`: centers the whole bin<br>`zero`: Sets the lower left side of the bin on the zero mark
-
 ---
 
 # Subdivisions
@@ -126,13 +125,16 @@ Setting | Description
 ---
 # Split bin
 ![OpenSCAD split bin](/assets/openscad/gridfinity-extended/gridfinity_basic_cup-split_bin_text.gif){:.wrap-lightbox width="300" }<br>
-Splits a cup, with the intent of joining after printing to produce larger cups. The split removes half a cell. If you want a 9 cell bin, configure a 5 cell cup with `extention_x_enabled`. This will produce a 4.5 cell cup which you can print twice and glue together.
+Splits a cup, with the intent of joining after printing to produce larger cups. When you have the target final bin, set the `extension_position`, then set `extension_enabled` to **front** render and then **back** to generate both halves.
 
 Setting | Description
 -|-
-`extention_x_enabled` | Cuts the first half cell along the x axis (21mm) from the bin.
-`extention_y_enabled` | Cuts the first half cell along the y axis (21mm) from the bin.
-`extention_tabs_enabled` | Adds tabs to the cut walls to assist in gluing together.
+`extension_x_enabled` | Enable or disable extension in the X direction.<br>**Options**<br>`disabled`: Split bin disabled<br>`front`: Select front<br>`back`: Select back.
+`extension_x_position` | Position of the extension in the X direction in gf units.
+`extension_y_enabled` | Enable or disable extension in the Y direction.<br>**Options**<br>`disabled`: Split bin disabled<br>`front`: Select front<br>`back`: Select back.
+`extension_y_position` | Position of the extension in the Y direction in gf units.
+`extension_tabs_enabled` | Adds tabs to the cut walls to assist in gluing together.
+`extension_tab_size` | ize of the extension tabs (height, width, thickness, style). Width default is height, thickness default is 1.4, style {0,1,2}
 
 ---
 # Debug
