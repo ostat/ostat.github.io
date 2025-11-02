@@ -54,7 +54,7 @@ Image taken with iPhone, using calipers for scale<br>
   3. Apply that factor to the entire drawing (`Object → Transform → Scale`).
 
 ### Example settings scale
-Using the calipers, measured `70 → 200` for a distance of 130mm. On screen measurement was 94.18mm. This gives are scale of 1.38(`1.38 = 130/94.18`). 
+Using the calipers, measured `70 → 200` for a distance of 130mm. On screen measurement was 94.18mm. This gives are scale of 1.38(`1.38 = 130/94.18`).<br>
 ![openscad label](/assets/openscad/gridfinity-extended/custom-cutout/inkscape-scale.gif){:.wrap-lightbox width="600" }
 
 # Step 4. Trace the shape
