@@ -9,9 +9,9 @@ A Gridfinity script for creating cutouts to produce a custom fit to real-world o
 # Process
 ## Overview
 The achieve an a nice fit we will photographing a real-world object, converting it to a **to-scale stencil**, and then using that in **OpenSCAD** to cut the recess.<br>
-The key challenge here is **getting the scale correct**.
+The key challenge here is **getting the scale correct**.<br>
 
-![Complete process](/assets/openscad/gridfinity-extended/custom-cutout\custom-cutout-complete.gif){:.wrap-lightbox width="150" }
+![Complete process](/assets/openscad/gridfinity-extended/custom-cutout\custom-cutout-complete.gif){:.wrap-lightbox width="400" }
 
 ---
 # Step 1. Photograph the object with a scale reference
@@ -32,7 +32,7 @@ If the item fits on a flatbed scanner:
 * Make note of the DPI for when importing in to Inkscape
 
 ## Example Taking image with phone
-Image taken with iPhone, using calipers for scale
+Image taken with iPhone, using calipers for scale<br>
 ![openscad label](/assets/openscad/gridfinity-extended/custom-cutout\stanley-photo.jpg){:.wrap-lightbox width="150" }
 
 
@@ -55,7 +55,7 @@ Image taken with iPhone, using calipers for scale
 
 ### Example settings scale
 Using the calipers, measured `70 → 200` for a distance of 130mm. On screen measurement was 94.18mm. This gives are scale of 1.38(`1.38 = 130/94.18`). 
-![openscad label](/assets/openscad/gridfinity-extended/custom-cutout/inkscape-scale.gif){:.wrap-lightbox width="150" }
+![openscad label](/assets/openscad/gridfinity-extended/custom-cutout/inkscape-scale.gif){:.wrap-lightbox width="400" }
 
 # Step 4. Trace the shape
 
@@ -64,7 +64,7 @@ Using the calipers, measured `70 → 200` for a distance of 130mm. On screen mea
 * Apply the trace.
 * Clean up the trace removing anything that is not needed, including the reference object and any
 
-![Trace the shape](/assets/openscad/gridfinity-extended/custom-cutout/inkscape-trace.gif){:.wrap-lightbox width="150" }
+![Trace the shape](/assets/openscad/gridfinity-extended/custom-cutout/inkscape-trace.gif){:.wrap-lightbox width="400" }
 
 # Step 5. Export to file
 * In Inkscape select the path that was created
@@ -76,7 +76,7 @@ Using the calipers, measured `70 → 200` for a distance of 130mm. On screen mea
   * Change export type to `Plane SVG (.svg)`
   * Clieck Export
 
-![openscad label](/assets/openscad/gridfinity-extended/custom-cutout/inkscape-export.gif){:.wrap-lightbox width="150" }
+![openscad label](/assets/openscad/gridfinity-extended/custom-cutout/inkscape-export.gif){:.wrap-lightbox width="400" }
 
 # Step 5. Inport svg in to Gridfinity
 * Open **Gridfinity Custom Cutout**
