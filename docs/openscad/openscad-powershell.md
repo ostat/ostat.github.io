@@ -39,8 +39,8 @@ $cmdArgs += " -D `"Wall_Thickness=2.4`""
 $cmdArgs += " -D `"Transition_Angle=45`""
 
 # String parameter examples (note nested quoting)
-$cmdArgs += " -D `"Style=`"`"hose`"`""
-$cmdArgs += " -D `"Measurement=`"outer`"`""
+$cmdArgs += " -D `"Style=`"`"hose`"`"`""
+$cmdArgs += " -D `"Measurement=`"outer`"`"`""
 
 $cmdArgs += " $scadScriptPath"
 
@@ -77,7 +77,7 @@ $cmdArgs = AddArgs $cmdArgs $transitionAngle " -D `"Transition_Angle=$transition
 
 # Strings
 $cmdArgs = AddArgs $cmdArgs $style       " -D `"Style=`"`"$style`"`""
-$cmdArgs = AddArgs $cmdArgs $measurement " -D `"Measurement=`"$measurement`"`""
+$cmdArgs = AddArgs $cmdArgs $measurement " -D `"Measurement=`"$measurement`"`"`""
 
 $cmdArgs += " $scadScriptPath"
 
@@ -132,19 +132,32 @@ $scadExePath = 'C:\Program Files\OpenSCAD\openscad.exe'
 $scadScriptPath = 'C:\path\to\model.scad'
 $outputPath = 'C:\path\to\output.stl'
 
-function AddArgs($cmdArgs, $value, $argValue) {
-    if (![string]::IsNullOrEmpty($value)) { $cmdArgs += $argValue }
-    return $cmdArgs
+Function OpenSCAD-AddArgs($ArgName, $ArgValue) {
+    write-host "ArgName: $($ArgName) ArgValue: $($ArgValue)"
+
+    if ($ArgValue -eq $null) {
+        return ''
+    } elseif ($ArgValue -is [string]) {
+        if (![string]::IsNullOrEmpty($ArgValue)) {
+            return " -D `"$($ArgName)=`"`"$($ArgValue)`"`"`""
+        }
+    } elseif ($ArgValue -is [int] -or $ArgValue -is [double] -or $ArgValue -is [decimal] -or $ArgValue -is [long]) {
+        return " -D `"$($ArgName)=$($argValue)`""
+    } else {
+        throw "unsupported type $($ArgValue.GetType().FullName)"
+    }
 }
 
 $style = 'hose'             # string
 $diameter = 50              # number
-$length = 40                # number
+$length = 40.45              # number
 
 $cmdArgs = "-o `"$outputPath`""
-$cmdArgs = AddArgs $cmdArgs $style    " -D `"Style=`"$style`"`""
-$cmdArgs = AddArgs $cmdArgs $diameter " -D `"Diameter=$diameter`""
-$cmdArgs = AddArgs $cmdArgs $length   " -D `"Length=$length`""
+
+$cmdArgs += OpenSCAD-AddArgs -ArgName 'Style' -ArgValue $style
+$cmdArgs += OpenSCAD-AddArgs -ArgName 'Diameter' -ArgValue $Diameter
+$cmdArgs += OpenSCAD-AddArgs -ArgName 'Length' -ArgValue $length
+
 $cmdArgs += " $scadScriptPath"
 
 Start-Process $scadExePath -ArgumentList $cmdArgs -Wait
