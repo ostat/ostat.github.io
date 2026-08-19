@@ -6,7 +6,7 @@ parent: Projects
 
 # A Custom View Assist Dashboard for an Amazon Echo Show 5
 
-![View Assist dashboard running on an Amazon Echo Show 5 Gen 2](/assets/projects/view_assist_side_menu.png)<br>
+![View Assist dashboard running on an Amazon Echo Show 5 Gen 2](/assets/projects/view_assist/view_assist_with_side_menu.png)<br>
 
 After watching this [this dashboard video](https://www.youtube.com/watch?v=6p5wvVl957c). I wanted to set up a similar bedside dashboard, with an always-on Home Assistant display. View_assist looks quiet nice as a bedside dashboard, but its primarily designed to be voice activate. I wanted something would be mostly touch activated with a side menu.
 
@@ -28,18 +28,54 @@ Before importing it:
 1. Install and configure View Assist.
 2. Confirm that the standard View Assist dashboard loads on the Echo.
 3. Install View Assist's required Lovelace dependencies through HACS, including Button Card, Layout Card, and Card Mod.
-4. Open the **View Assist** dashboard in Home Assistant.
-5. Select **Edit dashboard** from the three-dot menu.
-6. Open the three-dot menu again and select **Raw configuration editor**.
-7. Copy the current configuration into a backup file.
-8. Replace the editor contents with the contents of the yaml below and save.
-9. Refresh or restart the browser on the Echo Show.
+4. Installed the custom **view-assist-menu-card**
+5. Modify the **View Assist** dashboard
+6. Create the **Lovelace** dashboard
+
+## Installed the custom **view-assist-menu-card**
+We need to create a small custom Lovelace card. This card can be used on both the View assist dashboard and the custom lovelace dashboards.
+
+- Reads `menu_items` from the active View Assist device.
+- Creates an always-visible menu on the right side of every View Assist view.
+- reduce the width of the standard screens so they are not behind the menu.
+- Shows light icons in yellow while the light is on.
+
+Save the below file to you Home Assistance:
+- save as: : `/local/view-assist-menu-card.js`
+
+Register it through the Home Assistant UI:
+- Open Settings → Dashboards.
+- Select the three-dot menu in the upper-right.
+- Select Resources.
+- Select Add resource.
+- Enter: `/local/view-assist-menu-card.js?v=1`
+- Select JavaScript module as the resource type.
+- Select Create.
+
+Then perform a hard refresh on the browser:
+- Desktop: Ctrl+F5
+- Echo/browser display: reload the page or restart its browser app
+
+You can how use the **view-assist-menu-card* where its needed.
+
+## Modify the **View Assist** dashboard
 
 Do not edit `.storage/lovelace.view_assist` directly. View Assist uses a Home Assistant storage-mode dashboard, so dashboard changes should be saved through the Raw configuration editor.
 
+  - Open the **View Assist** dashboard in Home Assistant.
+  - Select **Edit dashboard** from the three-dot menu.
+  - Open the three-dot menu again and select **Raw configuration editor**.
+  - Copy the current configuration into a backup file.
+  - Replace the editor contents with the contents of the yaml below and save.
+  - Refresh or restart the browser on the Echo Show.
+
+## Create the **Lovelace** dashboard
+  - Create a new **Lovelace** dashboard
+  - Add the **view-assist-menu-card** the dashboard
+
 ## Configure the side menu
 
-The side menu reads its entries from the View Assist entity associated with the device displaying the dashboard. This allows the kitchen, study, bedroom, or other View Assist devices to have different menus while sharing the same dashboard configuration.
+The side menu reads its entries from the View Assist entity associated with the device displaying the dashboard. The modified View Assist dashboard and the sample room Lovelace dashboard both use this same menu configuration. This allows the kitchen, study, bedroom, or other View Assist devices to have different menus without maintaining the menu entries separately on each dashboard.
 
 Configure a device from:
 
@@ -56,12 +92,15 @@ view:weather|weather-partly-cloudy
 The first value is the destination and the value after `|` is the Material Design icon name. Do not include the `mdi:` prefix.
 
 ### Open another Home Assistant dashboard
-
 ```text
 view:/dashboard-myroom/0|view-dashboard
 ```
-For this I create a small dashboard for each room that will an echo. The dashboard provides access to the smart devices in that room (AC, light, fan).
+![Lovelace dashboard for an Amazon Echo Show 5 Gen 2](/assets/projects/view_assist/lovelace_dashboard.png)<br>
+For this, I create a small dashboard for each room that has an Echo. The dashboard provides access to the smart devices in that room, such as the air conditioner, lights, and fan.
 A destination beginning with `/` is treated as an absolute Home Assistant path.
+This is not as smooth as navigating between View Assist views. Opening a separate Lovelace dashboard reloads the whole page, and returning to View Assist reloads it again.
+
+The sample room dashboard below includes a side-menu card that reads `menu_items` from the active View Assist device. Add this card to each separate Lovelace dashboard where you want the shared menu to appear. The card configuration stays the same; changes made under the device's **Menu Items** setting are then reflected in both the View Assist dashboard and the room dashboard.
 
 ### Add a light button
 
@@ -96,25 +135,345 @@ view:/dashboard-study/0|view-dashboard
 entity:light.study|lightbulb
 service:script.good_night|sleep
 ```
-
-## What was changed
-
-What has changed in the view_assist dashboard.
-
-- Reads `menu_items` from the active View Assist device.
-- Creates an always-visible menu on the right side of every View Assist view.
-- reduce the width of the standard screens so they are not behind the menu.
-- Shows light icons in yellow while the light is on.
-
-Because the menu floats over the dashboard, the Clock home screen and Weather view also reserve a responsive gutter on the right. Their content stops before the menu, while their background image or colour still covers the full screen.
-
 ## Final notes
 
-This is a hack built on top of another hack, but it has turned the Echo Show 5 into a useful little Home Assistant control panel. The menu remains native to each View Assist device's configuration, so I can change its buttons without maintaining a separate dashboard for every display.
+This is a hack built on top of another hack, but it has turned the Echo Show 5 into a useful little Home Assistant control panel. The menu remains native to each View Assist device's configuration, so I can change its buttons in one place and use them on both the View Assist and room Lovelace dashboards.
 
 Keep a backup of the working dashboard, especially before updating View Assist or experimenting with further layout changes. If something breaks, restore the saved configuration through the View Assist dashboard's Raw configuration editor.
 
+# Code
+## view-assist-menu-card
+<div class="code-block-title">View Assist Menu Card</div>
+<div class="code-scroll" markdown="1">
+```yaml
+class ViewAssistMenuCard extends HTMLElement {
+  static getConfigElement() {
+    return document.createElement("hui-error-card");
+  }
 
+  static getStubConfig() {
+    return {
+      position: "right",
+      reverse: true,
+    };
+  }
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    this._config = {};
+    this._hass = undefined;
+    this._signature = "";
+  }
+
+  setConfig(config) {
+    this._config = {
+      position: "right",
+      reverse: true,
+      width: "clamp(56px, 7vw, 90px)",
+      padding: "0.5vw",
+      gap: "0px",
+      ...config,
+    };
+    this._signature = "";
+    this._render();
+  }
+
+  set hass(hass) {
+    this._hass = hass;
+    this._render();
+  }
+
+  getCardSize() {
+    return 1;
+  }
+
+  _getViewAssistEntity() {
+    return (
+      this._config.entity || localStorage.getItem("view_assist_sensor") || ""
+    );
+  }
+
+  _getSignature(entityId, menuItems) {
+    const entityStates = menuItems
+      .filter((item) => typeof item === "string" && item.startsWith("entity:"))
+      .map((item) => {
+        const target = item.split("|")[0].slice(7);
+        return `${target}:${this._hass?.states[target]?.state || ""}`;
+      });
+
+    return JSON.stringify({
+      entityId,
+      menuItems,
+      entityStates,
+      path: window.location.pathname,
+      config: this._config,
+    });
+  }
+
+  _normalisePath(path) {
+    return path.replace(/\/{2,}/g, "/");
+  }
+
+  _getMenuItems(entityId) {
+    const items = this._hass?.states[entityId]?.attributes?.menu_items;
+    if (!Array.isArray(items)) {
+      return [];
+    }
+
+    const filtered = items.filter(
+      (item) => typeof item === "string" && item !== "menu",
+    );
+    return this._config.reverse ? [...filtered].reverse() : filtered;
+  }
+
+  _parseItem(entityId, item) {
+    const entity = this._hass.states[entityId];
+    const dashboard = (entity?.attributes?.dashboard || "/view-assist").replace(
+      /\/$/,
+      "",
+    );
+    const predefined = {
+      home: {
+        type: "view",
+        target: entity?.attributes?.home_screen || `${dashboard}/clock`,
+        icon: "home",
+      },
+      weather: {
+        type: "view",
+        target: `${dashboard}/weather`,
+        icon: "weather-sunny",
+      },
+      camera: {
+        type: "view",
+        target: `${dashboard}/camera`,
+        icon: "cctv",
+      },
+      music: {
+        type: "view",
+        target: `${dashboard}/music`,
+        icon: "music",
+      },
+    };
+
+    if (!item.includes(":")) {
+      return predefined[item] || {
+        type: "invalid",
+        target: item,
+        icon: "alert-circle-outline",
+      };
+    }
+
+    const [definition, iconDefinition = "help-circle"] = item.split("|");
+    const separator = definition.indexOf(":");
+    const type = definition.slice(0, separator);
+    let target = definition.slice(separator + 1);
+    const icons = iconDefinition.split(",").map((icon) => icon.trim());
+
+    if (type === "view" && !target.startsWith("/")) {
+      target = `${dashboard}/${target}`;
+    }
+
+    return {
+      type,
+      target: type === "view" ? this._normalisePath(target) : target,
+      icon: icons[0] || "help-circle",
+      offIcon: icons[1],
+    };
+  }
+
+  _createButton(entityId, item) {
+    const parsed = this._parseItem(entityId, item);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "menu-button";
+    button.title = item;
+
+    let iconName = parsed.icon;
+    if (parsed.type === "entity") {
+      const state = this._hass.states[parsed.target]?.state;
+      if (state === "off" && parsed.offIcon) {
+        iconName = parsed.offIcon;
+      }
+      button.classList.toggle("on", state === "on");
+    }
+
+    if (
+      parsed.type === "view" &&
+      window.location.pathname === parsed.target
+    ) {
+      button.classList.add("selected");
+    }
+
+    const icon = document.createElement("ha-icon");
+    icon.setAttribute("icon", `mdi:${iconName}`);
+    button.append(icon);
+
+    button.addEventListener("click", () => {
+      this._handleTap(entityId, parsed);
+    });
+
+    if (parsed.type === "entity") {
+      button.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+        const moreInfo = new Event("hass-more-info", {
+          bubbles: true,
+          composed: true,
+        });
+        moreInfo.detail = { entityId: parsed.target };
+        this.dispatchEvent(moreInfo);
+      });
+    }
+
+    return button;
+  }
+
+  _handleTap(entityId, item) {
+    if (!this._hass) {
+      return;
+    }
+
+    if (item.type === "view") {
+      this._hass.callService("view_assist", "navigate", {
+        device: entityId,
+        path: item.target,
+      });
+      return;
+    }
+
+    if (item.type === "entity") {
+      const domain = item.target.split(".")[0];
+      this._hass.callService(domain, "toggle", {
+        entity_id: item.target,
+      });
+      return;
+    }
+
+    if (item.type === "service") {
+      const separator = item.target.indexOf(".");
+      if (separator > 0) {
+        this._hass.callService(
+          item.target.slice(0, separator),
+          item.target.slice(separator + 1),
+          {},
+        );
+      }
+    }
+  }
+
+  _render() {
+    if (!this.shadowRoot || !this._hass) {
+      return;
+    }
+
+    const entityId = this._getViewAssistEntity();
+    const menuItems = this._getMenuItems(entityId);
+    const signature = this._getSignature(entityId, menuItems);
+    if (signature === this._signature) {
+      return;
+    }
+    this._signature = signature;
+
+    this.shadowRoot.replaceChildren();
+
+    const style = document.createElement("style");
+    const position = this._config.position === "left" ? "left" : "right";
+    style.textContent = `
+      :host {
+        display: block;
+      }
+
+      ha-card {
+        position: fixed;
+        ${position}: ${this._config.offset || "1.5vw"};
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: ${this._config.z_index || 10};
+        width: ${this._config.width};
+        padding: ${this._config.padding};
+        box-sizing: border-box;
+        border: none;
+        border-radius: ${this._config.border_radius || "18px"};
+        background: ${
+          this._config.background || "rgba(20, 20, 20, 0.92)"
+        };
+        box-shadow: ${
+          this._config.box_shadow || "0 4px 18px rgba(0, 0, 0, 0.35)"
+        };
+      }
+
+      .menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: ${this._config.gap};
+      }
+
+      .menu-button {
+        display: grid;
+        place-items: center;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        margin: 0;
+        padding: 0;
+        border: none;
+        border-radius: var(--ha-card-border-radius, 12px);
+        color: white;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .menu-button ha-icon {
+        width: 90%;
+        height: 90%;
+        --mdc-icon-size: 90%;
+      }
+
+      .menu-button.on {
+        color: var(--warning-color);
+      }
+
+      .menu-button.selected {
+        color: var(--primary-color);
+      }
+
+      .menu-button:active {
+        background: rgba(255, 255, 255, 0.12);
+      }
+    `;
+
+    const card = document.createElement("ha-card");
+    const menu = document.createElement("div");
+    menu.className = "menu";
+
+    for (const item of menuItems) {
+      menu.append(this._createButton(entityId, item));
+    }
+
+    card.append(menu);
+    this.shadowRoot.append(style, card);
+  }
+}
+
+if (!customElements.get("view-assist-menu-card")) {
+  customElements.define("view-assist-menu-card", ViewAssistMenuCard);
+}
+
+window.customCards = window.customCards || [];
+window.customCards.push({
+  type: "view-assist-menu-card",
+  name: "View Assist Menu Card",
+  description: "Reusable menu sourced from a View Assist device configuration.",
+});
+```
+</div>
+
+## Modified view_assist dashboard
+This is a the modified version of the view assist dashboard with a side menu added.
+
+Because the menu floats over the dashboard, the Clock home screen and Weather view also reserve a responsive gutter on the right. Their content stops before the menu, while their background image or colour still covers the full screen.
+
+<div class="code-block-title">View Assist Dashboard with side menu</div>
+<div class="code-scroll" markdown="1">
 ```yaml
 button_card_templates:
   variable_template:
@@ -701,72 +1060,12 @@ button_card_templates:
     template:
       - variable_template
       - responsive_base
-    styles:
-      custom_fields:
-        navbar:
-          - position: fixed
-          - right: 1.5vw
-          - top: 50%
-          - transform: translateY(-50%)
-          - z-index: 10
-          - width: clamp(56px, 7vw, 90px)
-          - padding: 0.5vw
-          - border-radius: 18px
-          - background-color: rgba(20, 20, 20, 0.92)
-          - box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35)
     custom_fields:
       navbar:
         card:
-          type: custom:layout-card
-          layout_type: grid-layout
-          layout:
-            margin: 0
-            card_margin: 0
-            grid-template-columns: 1fr
-          cards: |-
-            [[[
-              try {
-                const vaEntity = variables.var_assistsat_entity;
-                const menuItems = hass.states[vaEntity]?.attributes?.menu_items || [];
-                const supportedDynamicTypes = new Set(["view", "entity", "service"]);
-
-                return [...menuItems]
-                  .reverse()
-                  .filter(item => typeof item === "string" && item !== "menu")
-                  .map(item => {
-                    if (item.includes(":")) {
-                      const type = item.split(":", 1)[0];
-
-                      if (!supportedDynamicTypes.has(type)) {
-                        return {
-                          type: "custom:button-card",
-                          template: "icon_template",
-                          icon: "mdi:alert-circle-outline",
-                          tap_action: {
-                            action: "none"
-                          }
-                        };
-                      }
-
-                      return {
-                        type: "custom:button-card",
-                        template: `dynamic_${type}_item`,
-                        variables: {
-                          menu_item: item,
-                          entity_id: vaEntity
-                        }
-                      };
-                    }
-
-                    return {
-                      type: "custom:button-card",
-                      template: item
-                    };
-                  });
-              } catch (error) {
-                return [];
-              }
-            ]]]
+          type: custom:view-assist-menu-card
+          position: right
+          reverse: true
   icon_template:
     template: variable_template
     color_type: card
@@ -2303,5 +2602,66 @@ views:
               type: iframe
               url: '[[[ return variables.var_url ]]]'
               aspect_ratio: 50%
-
 ```
+</div>
+
+## Lovelace dashboard for a room
+![Lovelace dashboard for an Amazon Echo Show 5 Gen 2](/assets/projects/view_assist/lovelace_dashboard.png)<br>
+A Lovelace dashboard with a simple set of controls for the room. Its side menu reads the active device from `view_assist_sensor` in the browser's local storage, then loads the `menu_items` configured on that View Assist entity. This keeps the menu entries synchronized with the modified View Assist dashboard.
+
+The example supports the predefined `home`, `weather`, `camera`, and `music` items, along with the `view:`, `entity:`, and `service:` formats described above. You will need to customize the room controls and entity IDs for your devices. The main reusable part is the side-menu card configuration.
+
+<div class="code-block-title">LoveLace Dashboard for Room</div>
+<div class="code-scroll" markdown="1">
+```yaml
+views:
+  - type: sections
+    sections:
+      - type: grid
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: tile
+                entity: climate.hvac_study_hvac_study
+                features:
+                  - type: climate-hvac-modes
+                  - type: target-temperature
+                  - type: climate-fan-modes
+                  - type: climate-swing-modes
+                    style: dropdown
+            grid_options:
+              columns: 12
+              rows: auto
+          - type: vertical-stack
+            cards:
+              - type: tile
+                entity: fan.skyfan_study_skyfan_study_fan
+                name: Fan
+                vertical: false
+                features:
+                  - type: fan-speed
+                  - type: fan-direction
+                features_position: bottom
+              - type: tile
+                entity: light.skyfan_study_skyfan_study_light
+                name: Light
+                vertical: false
+                features:
+                  - type: light-brightness
+                  - type: light-color-favorites
+                features_position: bottom
+            grid_options:
+              columns: 9
+              rows: auto
+        column_span: 3
+      - type: grid
+        cards:
+          - type: custom:view-assist-menu-card
+            position: right
+            reverse: true
+    badges: []
+    max_columns: 4
+    cards: []
+    title: display
+```
+</div>

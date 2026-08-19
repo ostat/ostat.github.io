@@ -1,3 +1,29 @@
 //Custom styles for Ostat theme, based on the default light theme
 
 $content-width: 80rem;
+
+
+// limit the size of the code block
+.code-scroll {
+  max-height: 30rem;
+  overflow-y: auto;
+}
+
+.code-block-title {
+  padding: 0.5rem 1rem;
+  color: $grey-dk-100;
+  background: $grey-lt-200;
+  border: 1px solid $border-color;
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  font-weight: 600;
+}
+
+.code-block-with-title {
+  margin-bottom: 1rem;
+
+  .highlight {
+    margin-top: 0;
+    border-radius: 0 0 4px 4px;
+  }
+}
