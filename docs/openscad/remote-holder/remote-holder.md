@@ -23,9 +23,9 @@ The backer currently has two main options.
 - Repo source
 - Downloadable models on including some pre-rendered models and the OpenSCAD Script.
  - **Printables**
- - [https://www.printables.com/model/461683-cnc-hold-down-clamps-all-sizes-openscad](https://www.printables.com/model/461683-cnc-hold-down-clamps-all-sizes-openscad)
+ - [https://www.printables.com/model/1063065](https://www.printables.com/model/1063065)
  - **makerworld**: Models and online customiser
- - [https://makerworld.com/en/models/437224](https://makerworld.com/en/models/437224)
+ - [https://makerworld.com/en/models/762513](https://makerworld.com/en/models/762513)
 # Settings
 
 OpenSCAD Customiser settings
